@@ -1,0 +1,14 @@
+.portionBar {
+    height: 50px;
+    width: 300px;
+    border: 2px solid black;
+}
+
+.portion {
+    height: 50px;
+    width: 50px;
+}
+
+#red {
+    background-color: red;
+}
