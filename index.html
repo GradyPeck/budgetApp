@@ -12,17 +12,38 @@
         <link rel="stylesheet" href="styles.css">
     </head>
 
-    <header name="name">My Budget</header>
+
     <form id="Create">
-        <input type="text" name="total" id="" placeholder="Enter weekly budget here" />
+        <div>$<input type="number" name="total" id="" placeholder="Enter Total weekly budget" /></div>
+        
+        <div>$<input type="number" name="entertainment" id="" placeholder="Weekly budget for Entertainment" /></div>
+        
+        <div>$<input type="number" name="food" id="" placeholder="Weekly budget for Food" /></div>
+        
+        <div>$<input type="number" name="clothing" id="" placeholder="Weekly budget for Clothing" /></div>
+        
+        <div>$<input type="number" name="bills" id="" placeholder="Weekly budget for Bills" /></div>
         <button>Submit</button>
     </form>
 
     <body>
-        <header>
-            <h1>Adam West</h1>
-        </header>
+        <form>
+            <h1 class="name">Budget</h1>
+            <div class="mainContent">
+                <div class="button">
+                    <img id="add" src="add.JPG" alt="Add Item Button">
+                    <label for="addButton">Add Item</label>
+                </div>
+                <div class="button">
+                    <img id="edit" src="edit.JPG" alt="Edit Item Button">
+                    <label for="editButton">Edit Item</label>
+                </div>
+                <div class="button">
+                    <img id="remove" src="remove.JPG" alt="Remove Item Button">
+                    <label for="removeButton">Remove Item</label>
+                </div>
+            </div>    
+        </form>
         <script src="./script.js" async defer></script>
-
     </body>
 </html>

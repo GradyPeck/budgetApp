@@ -1,3 +1,23 @@
-body{
-    background-color: aqua;
+
+.name{
+    text-align: center;
+}
+
+.mainContent{
+    display: flex;
+}
+
+#add{
+    width: 25%;
+    height: auto;
+}
+
+#edit{
+    width: 25%;
+    height: auto;
+}
+
+#remove{
+    width: 25%;
+    height: auto;
 }
