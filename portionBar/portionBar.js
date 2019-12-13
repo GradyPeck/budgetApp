@@ -1,16 +1,20 @@
 "use strict";
 
+let colors = ["red", "green", "blue", "orange", "violet", "yellow"];
+
 class PortionBar {
     constructor (element, size, ...portions) {
         this.element = element;
         this.size = size;
         element.style.width = size + "px";
-        this.portions = {Aproperty: "blue"};
-        for(let i = 0; i < portions.size; i++) {
+        this.portions = {};
+        for(let i = 0; i < portions.length; i++) {
             let portyElement = document.createElement("div");
             let porty = new Portion (portions[i], portyElement);
             this.portions[portions[i]] = porty;
-            console.log(portions[i]);
+            this.element.appendChild(portyElement);
+            portyElement.classList.add("portion");
+            porty.setColor(colors[i]);
         }
         this.total = 0;
     }
@@ -19,11 +23,10 @@ class PortionBar {
         this.total = number;
     }
 
-    resizePortions (percentage) {
-        let totalUsed = 0;
-        for(let i = 0; i < this.portions.size; i++) {
+    resizePortions () {
+        for(let i = 0; i < this.portions.length; i++) {
             let porty = this.portions[i];
-            porty.style[margin-left] = "100px";
+            porty.style[width] = "100px";
         }
     }
 }
@@ -33,11 +36,12 @@ class Portion {
         this.name = name;
         this.element = element;
     }
+
+    setColor (color) {
+        this.element.style["background-color"] = color;
+    }
 }
 
-let babar = new PortionBar(document.getElementById("babar"), 300, "Food", "Owls");
+let babar = new PortionBar(document.getElementById("babar"), 300, "Food", "Owls", "Coffee");
 babar.setTotal(100);
 console.log(babar.portions);
-for(let porty in babar.portions) {
-    console.log(porty);
-}

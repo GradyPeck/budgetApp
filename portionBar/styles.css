@@ -2,13 +2,12 @@
     height: 50px;
     width: 300px;
     border: 2px solid black;
+    display: flex;
+    flex-direction: row;
 }
 
 .portion {
     height: 50px;
     width: 50px;
-}
-
-#red {
     background-color: red;
 }
