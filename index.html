@@ -1,28 +1,45 @@
 <!DOCTYPE html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My Budget</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<header id="form-head">
-    <button class="open-button" onclick="openForm()">Open Form</button>
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>My Budget</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <header id="form-head">
+            <button class="open-button" onclick="openForm()">Open Form</button>
     <div class="form-container" id="myForm">
         <div><h1 name="title">My Weekly Budget</h1></div>
+
         <div class="data-entry">Enter your name:<input type="text" name="name" id="" placeholder="" /></div>
+
         <div class="data-entry" >Enter Total budget: $<input type="number" name="total" id="" placeholder="" /></div>
+        
         <div class="data-entry">Budget for Entertainment: $<input type="number" name="entertainment" id="" placeholder="" /></div>
+        
         <div class="data-entry">Budget for Food: $<input type="number" name="food" id="" placeholder="" /></div>
+        
         <div class="data-entry">Budget for Clothing: $<input type="number" name="clothing" id="" placeholder="" /></div>
+        
         <div class="data-entry">Budget for Bills: $<input type="number" name="bills" id="" placeholder="" /></div>
+
         <div class="data-entry">Budget for Savings: $<input type="number" name="savings" id="" placeholder="" /></div>
+
         <button class="btn" onclick="closeForm()">Submit</button>
         <button class="btn cancel" onclick="closeForm()">Cancel</button>
+        
     </div>
-</header>
-<body>
-    <script src="./script.js"></script>
-</body>
+    </header>
+
+    <body>
+        
+        <script src="./script.js"></script>
+
+    </body>
 </html>
