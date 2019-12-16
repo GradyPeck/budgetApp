@@ -5,12 +5,14 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">    
+    
     <link rel="stylesheet" type="text/css" href="loading-bar.css"/>
     <script type="text/javascript" src="loading-bar.js"></script>
-    <link rel="stylesheet" href="styles.css">    
+    <script src="./script.js"></script>
 </head>
 <header>
-
+    
     <div class="dummyNav">
         <h1>Adam West</h1>
     </div>
@@ -19,31 +21,34 @@
         <li><button type="button">Remove Product</button></li>
         <li><button type="button">Edit Product</button></li>
     </ul> 
-
-
+    
+    
 </header>
 <body>
-
-            <div>      
-                <ul>
-                    <li>Weekly Income:<input type="number" name="total" id="" placeholder="Enter here"/></li>           
-                    <li>Entertainment Budget:<input type="number" name="entertainment" id="" placeholder="Enter here"/></li>
-                    <li>Food Budget:<input type="number" name="food" id="" placeholder="Enter here"/></li>
-                    
-                    <!-- how do insert multiple progress bars with different values?? -->
-                    <li>Clothing Budget:<input type="number" name="clothing" id="" placeholder="Enter here"/></li>
-                    <li>Clothing Spent:<input type="number" name="clothing" id="" placeholder="Enter here"/></li>
+    
+    <div>      
+        <ul class="budgets">
+            <li>Weekly Income:<input type="number" name="total" id="" placeholder="Enter here"/></li>
+            <!-- only reading first values entertainment budget and spent -->
+            <li>Entertainment Budget:<input type="number" name="entertainment" id="" placeholder="Enter here"/></li>
+            <li>Entertainment Spent:<input type="number" name="entertainment" id="" placeholder="Enter here"/></li>
+            
+            <li>Food Budget:<input type="number" name="food" id="total2" placeholder="Enter here"/></li>
+            <li>Food Spent:<input type="number" name="food" id="spent2" placeholder="Enter here"/></li>
+            
+            <!-- how do insert multiple progress bars with different values?? -->
+            <li>Clothing Budget:<input type="number" name="clothing" id="" placeholder="Enter here"/></li>
+            <li>Clothing Spent:<input type="number" name="clothing" id="" placeholder="Enter here"/></li>
+            
+            <li>Bills Budget:<input type="number" name="bills" id="total1" placeholder="Enter here"/></li>
+            <li>Bills Spent:<input type="number" name="bills" id="spent1" placeholder="Enter here"/></li>
+            <li><input type="submit" onclick="newBar()"></li>
+        </ul>
+    </div>  
+    
+    <ul id="insertBudget1" id="insertBudget2">
+       
         
-                    <li>Bills Budget:<input type="number" name="bills" id="total" placeholder="Enter here"/></li>
-                    <li>Bills Spent:<input type="number" name="bills" id="spent" placeholder="Enter here"/></li>
-                    <li><input type="submit" onclick="newBar()"></li>
-                </ul>
-            </div>  
-        
-    <ul id="insertBudget">
-
     </ul>
- 
-    <script src="./script.js"></script>
 </body>
 </html>

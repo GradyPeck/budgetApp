@@ -1,9 +1,10 @@
 ul {
   display: flex;
-  flex-direction: column;
+  
 }
 li {
   list-style-type: none;
+  padding: 3px;
 }
 h2 {
   display: flex;
@@ -27,4 +28,8 @@ button {
   border-radius: 5px;
   background-color: #505e6e;
   color: white;
+}
+.budgets {
+    display: flex;
+    flex-direction: column;
 }
