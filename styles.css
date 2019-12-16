@@ -1,14 +1,19 @@
-form{
-    background: cadetblue;
+#form-head{
+    display: flex;
 }
-
-div{
-display: flex;
-justify-content: center;
-align-items: center;
-margin: 10px;
+#myForm{
+    display: none;
+    position: fixed;
+    background: linear-gradient(to bottom, blue, white);
 }
-
+.title{
+    display: flex;
+    justify-content: center;
+}
+.data-entry{
+margin-bottom: 10px;
+}
 input{
-    width: 30%;
+}
+.button{
 }
