@@ -35,7 +35,7 @@ function newBar(budget, total) {
   let bar = new ldBar(`#${budget}`, { preset: "bubble" });
 
   // divides total by spent to create percentage amount below 100
-  let c = (0 / total) * 100;
+  let c = (50 / total) * 100;
   // let d = (spent2 / total2) * 100;
   /* ldBar stored in the element */
   bar.set(c);
@@ -59,3 +59,4 @@ function submit() {
   }
 
 }
+
