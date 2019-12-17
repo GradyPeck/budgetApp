@@ -2,7 +2,7 @@
 
 function newBar(budget, total) {
 
-  let x = `<div
+  let newBudget = `<div
       class="label-center"
       id="${budget}"
       
@@ -10,7 +10,7 @@ function newBar(budget, total) {
       <h2>${budget}</h2>
       <p>$0 of ${total} Spent</p>`;
       let node = document.createElement("li");
-      node.innerHTML = x;
+      node.innerHTML = newBudget;
   document.getElementById("insertBudget").appendChild(node);
 
   /* construct manually */
@@ -40,7 +40,4 @@ function submit() {
     }
   }
 
-  function createBudget(total, spent, name) {
-      
-  }
 }
