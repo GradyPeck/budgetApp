@@ -7,7 +7,7 @@
         <title>My Budget</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <script src="https://kit.fontawesome.com/b36805c446.js" crossorigin="anonymous"></script>
 
         <link rel="stylesheet" href="styles.css">
     </head>
@@ -29,19 +29,16 @@
     <body>
         <form>
             <h1 class="name">Budget</h1>
-            <div class="mainContent">
-                <div class="button">
-                    <img id="add" src="add.JPG" alt="Add Item Button">
-                    <label for="addButton">Add Item</label>
-                </div>
-                <div class="button">
-                    <img id="edit" src="edit.JPG" alt="Edit Item Button">
-                    <label for="editButton">Edit Item</label>
-                </div>
-                <div class="button">
-                    <img id="remove" src="remove.JPG" alt="Remove Item Button">
-                    <label for="removeButton">Remove Item</label>
-                </div>
+            <div class="buttonContent">
+                <a href="#" class="button add">
+                    <i class="fas fa-plus"></i>
+                </a>
+                <a href="#" class="button edit">
+                    <i class="far fa-edit"></i>
+                </a>
+                <a href="#" class="button remove">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
             </div>    
         </form>
         <script src="./script.js" async defer></script>
