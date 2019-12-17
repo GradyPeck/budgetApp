@@ -1,27 +1,23 @@
 "use strict";
 
-function newBar() {
-  let total = document.getElementById("total").value;
-  // let spent = document.getElementById("spent").value;
+function newBar(budget, total) {
 
-
-  let budget = "bills";
-
-  let x = `<li> <div
+  let x = `<div
       class="label-center"
       id="${budget}"
       
       ></div><div></div>
-      <h2>Bills</h2>
-      <p>${spent} of ${total} Spent</p>
-      </li>`;
-  document.getElementById("insertBudget").innerHTML = x;
+      <h2>${budget}</h2>
+      <p>$0 of ${total} Spent</p>`;
+      let node = document.createElement("li");
+      node.innerHTML = x;
+  document.getElementById("insertBudget").appendChild(node);
 
   /* construct manually */
-  let bar = new ldBar("#bills", { preset: "bubble" });
+  let bar = new ldBar(`#${budget}`, { preset: "bubble" });
 
   // divides total by spent to create percentage amount below 100
-  let c = (spent / total) * 100;
+  let c = (0 / total) * 100;
   // let d = (spent2 / total2) * 100;
   /* ldBar stored in the element */
   bar.set(c);
@@ -36,11 +32,15 @@ function closeForm() {
 }
 
 function submit() { 
-  let cats = document.getElementsByClassName("data-entry").value;
+  let cats = document.getElementsByClassName("data-entry");
 
-  for(arry in cats) {
-    if(arry.value == true) {
-      newBar();
+  for(let arry of cats) {
+    if(arry.value) {
+      newBar(arry.name, arry.value);
     }
+  }
+
+  function createBudget(total, spent, name) {
+      
   }
 }
