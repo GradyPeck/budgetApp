@@ -11,8 +11,8 @@
     <script src="./script.js"></script>
 
 </head>
-<body>
 
+    
     <header id="form-head">
             <button class="open-button" onclick="openForm()">Open Form</button>
     <div class="form-container" id="myForm">
@@ -33,7 +33,7 @@
 
         <div class="data-entry">Budget for Savings: $<input type="number" name="savings" id="" placeholder="" /></div>
 
-        <button class="btn" onclick="newBar()" onclick="closeForm()" >Submit</button>
+        <button class="btn" onclick="newBar(); closeForm()">Submit</button>
         <button class="btn cancel" onclick="closeForm()">Cancel</button>
         
     </div>

@@ -1,12 +1,37 @@
 #form-head{
     display: flex;
+    justify-content: center;
+    
+    
 }
 
+.open-button{
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.open-button:hover{
+    background-color: darkgreen;
+}
+
+.open-button:active{
+    background-color: lime;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
 
 #myForm{
     display: none;
     position: fixed;
-    background: linear-gradient(to bottom, blue, white);
+    background: linear-gradient(to bottom, green, white);
 }
 
 .title{
@@ -27,8 +52,10 @@ body {
 
 ul {
  display: flex;
+ position: fixed;
+ right: 10px;
+ bottom: 10px;
 
-  
 }
 li {
   list-style-type: none;
