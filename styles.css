@@ -73,3 +73,44 @@ li {
     flex-direction: row;
 }
 
+
+.name{
+    text-align: center;
+}
+
+.buttonContent{
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(to bottom, lightblue, white);
+}
+
+.button{
+    border-radius: 50%;
+    box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), 
+    inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204,198,197,.5);
+    height: 70px;
+    width: 70px;
+    background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.add{
+    font-size: 275%;
+    color: rgb(68, 238, 68);
+    text-shadow: 0px -1px 1px green, 1px 1px 1px white;
+}
+
+.edit{
+    font-size: 200%;
+    color: rgb(120, 120, 243);
+    text-shadow: 0px -1px blue, 1px 1px 1px white;
+}
+
+.remove{
+    font-size: 225%;
+    color: rgb(236, 100, 100);
+    text-shadow: opx -1px 1px rgb(150, 7, 7), 1px 1px 1px white;
+}
