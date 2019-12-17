@@ -1,13 +1,8 @@
 .portionBar {
-    height: 50px;
+    height: 15px;
     width: 300px;
     border: 2px solid black;
     display: flex;
     flex-direction: row;
 }
 
-.portion {
-    height: 50px;
-    width: 50px;
-    background-color: red;
-}
