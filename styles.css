@@ -1,3 +1,4 @@
+
 #form-head{
     display: flex;
     justify-content: center;
@@ -63,3 +64,12 @@ li {
   
   
 }
+
+.portionBar {
+    height: 15px;
+    width: 300px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
