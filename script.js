@@ -1,5 +1,23 @@
 "use strict";
 
+class Category {
+  constructor (name, allocation) {
+    this.name = name;
+    this.allocation = allocation;
+    this.spent = 0;
+  }
+
+  addSpent (expenditure) {
+    let newSpent = this.spent += expenditure;
+    if(newSpent > this.allocation) {
+      //squib expenditure
+    }
+    else {
+      this.spent = newSpent;
+    }
+  }
+}
+
 function newBar(budget, total) {
 
   let newBudget = `<div
