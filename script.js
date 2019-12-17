@@ -2,7 +2,8 @@
 
 function newBar() {
   let total1 = document.getElementById("total1").value;
-  let spent1 = document.getElementById("spent1").value;
+  // let spent1 = document.getElementById("spent1").value;
+  let spent1 = 50;
   // let total2 = document.getElementById("total2").value;
   // let spent2 = document.getElementById("spent2").value;
 
