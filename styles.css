@@ -39,3 +39,107 @@
     color: rgb(236, 100, 100);
     text-shadow: opx -1px 1px rgb(150, 7, 7), 1px 1px 1px white;
 }
+
+@media(min-width: 786px){
+    .button{
+        border-radius: 0%;
+        width:250px;
+        background-image: none;
+        
+    }
+
+    .edit{
+        box-shadow: none;
+    }
+
+    .edit::before, .edit::after{
+        position: absolute;
+        width: 100%;
+	    height: 100%;
+        bottom: 0;
+	    left: 0;
+        z-index: 1;
+        transition: all 0.3s;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    .edit:hover::before{
+        animation-name: rotateCW;
+        animation-duration: 3s;
+        left: 96px;
+        width: 64px;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    .edit:hover::after{
+        animation-name: rotateCCW;
+        animation-duration: 2s;
+        left: 96px;
+        width: 64px;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    @keyframes rotatecw {
+        from {transform: rotate(0deg);}
+        to {transform: rotate(360deg);}
+    }
+    
+    @keyframes rotateccw {
+        from {transform: rotate(0deg);}
+        to {transform: rotate(-360deg);}
+    }
+
+    .remove{
+        transition: all 0.5s;
+        position: relative;
+        box-shadow: none;
+        background-image: none;
+    }
+
+    .remove span{
+        z-index: 2;
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .remove::before{
+        content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.5s;
+    border: 1px solid rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 0);
+    }
+
+    .remove::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 0.5s;
+        border: 1px solid rgba(255,255,255,0.2);
+        background-color: rgba(255,255,255,0.1);
+    }
+
+    .remove:hover:before {
+        transform: rotate(-45deg);
+        background-color: rgba(104, 54, 54, 0.219);
+    }
+
+    .remove:hover::after {
+        transform: rotate(45deg);
+        background-color: rgba(104, 54, 54, 0.219);
+    }
+
+
+}
