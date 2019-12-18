@@ -8,45 +8,70 @@
     <link rel="stylesheet" href="styles.css">    
     <link rel="stylesheet" type="text/css" href="loading-bar.css"/>
     <script type="text/javascript" src="loading-bar.js"></script>
+    <script src="https://kit.fontawesome.com/b36805c446.js" crossorigin="anonymous"></script>
     <script src="./script.js"></script>
-
+    
 </head>
 
-    
-    <header id="form-head">
-            <button class="open-button" onclick="openForm()">Open Form</button>
-    <div class="form-container" id="myForm">
+
+<header id="form-head">
+
+    <button class="open-button" onclick="openForm()" >Create Budget</button>
+
+    <div class="form-container" id="myForm" style="display:block">
         <div><h1 name="title">My Weekly Budget</h1></div>
-
-        <div >Enter your name:<input type="text" name="name" id="" class="data-entry"/></div>
-
-        <div  >Enter Total budget:<input type="number" name="total" class="data-entry"/></div>
         
-        <div >Entertainment Budget Total:<input type="number" name="entertainment" class="data-entry"/></div>
-
-        <div >Food Budget Total:<input type="number" name="food" class="data-entry"/></div>
-
-        <div >Clothing Budget Total:<input type="number" name="clothing" class="data-entry"/></div>
-
-        <div >Bills Budget Total:<input type="number" name="bills" class="data-entry" /></div>
-
-        <div>Savings Budget Total:<input type="number" name="savings"  class="data-entry"/></div>
-
+        <div>Enter your name:<input type="text" name="name" id="userName" /></div>
+        
+        <div>Enter Total budget:<input type="number" name="Total"/></div>
+        
+        <div>Entertainment Budget Total:<input type="number" name="Entertainment" class="data-entry"/></div>
+        
+        <div>Food Budget Total:<input type="number" name="Food" class="data-entry"/></div>
+        
+        <div>Clothing Budget Total:<input type="number" name="Clothing" class="data-entry"/></div>
+        
+        <div>Bills Budget Total:<input type="number" name="Bills" class="data-entry" /></div>
+        
+        <div>Savings Budget Total:<input type="number" name="Savings"  class="data-entry"/></div>
+        
         <button class="btn" onclick="submit(); closeForm()">Submit</button>
         <button class="btn cancel" onclick="closeForm()">Cancel</button>
-        
     </div>
-    </header>
+</header>
 
-    <ul id="insertBudget">
+<div id="insertName">
 
-        </ul>
+</div>
 
-        <div class="portionBar" id="babar"></div>
-        
-        <script src="portionBar.js"></script>
+<form>
+    <div class="buttonContent">
+        <a href="#" class="button add">
+            <i class="fas fa-plus"></i>
+        </a>
+        <a href="#" class="button edit">
+            <i class="far fa-edit"></i>
+        </a>
+        <a href="#" class="button remove">
+            <i class="fas fa-trash-alt"></i>
+        </a>
+    </div>    
+</form>
+<div class="pBar">
+    
+    <div class="portionBar" id="babar"></div>
+</div>
+
+
+
+<ul id="insertBudget">
+    
+</ul>
+
+
+<script src="portionBar.js"></script>
 
 </body>
-        
-    
+
+
 </html>
