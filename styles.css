@@ -55,14 +55,16 @@ body {
 
 ul {
  display: flex;
- justify-content: space-between;
+ justify-content: space-evenly;
  flex-wrap: wrap;
 }
 li {
   list-style-type: none;
-  padding: 3px;
-  
-  
+  padding: 5px;
+}
+
+.budgetBox {
+    margin: 100px;
 }
 
 .portionBar {
