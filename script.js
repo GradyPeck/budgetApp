@@ -31,7 +31,6 @@ function newBar(budget, total) {
   let node = document.createElement("li");
   node.innerHTML = newBudget;
   document.getElementById("insertBudget").appendChild(node);
-
   
   /* construct manually */
   let bar = new ldBar(`#${budget}`, { preset: "bubble" });
