@@ -32,14 +32,6 @@ function newBar(budget, total) {
   node.innerHTML = newBudget;
   document.getElementById("insertBudget").appendChild(node);
 
-    // inserts users name at top
-    // let userName = document.getElementById("userName");
-    // let addName = document.createElement("h1");
-    // addName.innerHTML = userName;
-    // document.getElementById("insertName").appendChild(addName);
-  
-  
-  
   
   /* construct manually */
   let bar = new ldBar(`#${budget}`, { preset: "bubble" });
@@ -67,6 +59,11 @@ function submit() {
       newBar(arry.name, arry.value);
     }
   }
+    // inserts users name at top
+    let userName = document.getElementById("userName");
+    let addName = document.createElement("h1");
+    addName.innerHTML = userName.value;
+    document.getElementById("insertName").innerHTML = addName.outerHTML;
 
   
 }
