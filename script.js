@@ -32,7 +32,6 @@ function newBar(budget, total) {
   let node = document.createElement("li");
   node.innerHTML = newBudget;
   document.getElementById("insertBudget").appendChild(node);
-<<<<<<< HEAD
 
   // inserts users name at top
   // let userName = document.getElementById("userName");
@@ -43,8 +42,6 @@ function newBar(budget, total) {
 
 
 
-=======
->>>>>>> 583eac85fb357bd8d60e2b460ae5d52b491ea9fc
   
   /* construct manually */
   let bar = new ldBar(`#${budget}`, { preset: "bubble" });
