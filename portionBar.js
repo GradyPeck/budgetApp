@@ -1,14 +1,19 @@
 "use strict";
 
 let colors = ["red", "green", "blue", "orange", "violet", "yellow"];
-let sizes = {Food: 100, Flutes: 600, Coffee: 50, Owls: 150};
+//let sizes = {Food: 100, Flutes: 600, Coffee: 50, Owls: 150};
 
 class PortionBar {
-    constructor (element, ...portions) {
+    constructor (element, categories) {
         //connect this object to its HTML element
         this.element = element;
         //set up empty portions object
         this.portions = {};
+        //set up array of category names
+        let portions = [];
+        for(let catto in categories) {
+            portions.push(catto);
+        }
         //iterate through array of category names
         for(let i = 0; i < portions.length; i++) {
             //make new Portion object and element, and connect to this PortionBar
@@ -35,9 +40,9 @@ class PortionBar {
         let sizeFactor = myWidth/this.total;
         console.log(sizeFactor);
         for(let porty in this.portions) {
-            console.log(sizes[porty]);
-            console.log(sizes[porty]*sizeFactor);
-            this.portions[porty].element.style["width"] = sizes[porty]*sizeFactor + "px";
+            console.log(categories[porty].spent);
+            console.log(categories[porty].spent*sizeFactor);
+            this.portions[porty].element.style["width"] = categories[porty].spent*sizeFactor + "px";
         }
     }
 }
@@ -53,6 +58,6 @@ class Portion {
     }
 }
 
-let babar = new PortionBar(document.getElementById("babar"), "Food", "Owls", "Coffee");
-babar.setTotal(500);
-babar.resizePortions();
+//let babar = new PortionBar(document.getElementById("babar"), "Food", "Owls", "Coffee");
+//babar.setTotal(500);
+//babar.resizePortions();

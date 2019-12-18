@@ -1,15 +1,16 @@
 "use strict";
 
+let categories = {};
+
 class Category {
-  constructor (name, allocation) {
-    this.name = name;
+  constructor(allocation) {
     this.allocation = allocation;
     this.spent = 0;
   }
-  
-  addSpent (expenditure) {
+
+  addSpent(expenditure) {
     let newSpent = this.spent += expenditure;
-    if(newSpent > this.allocation) {
+    if (newSpent > this.allocation) {
       //squib expenditure
     }
     else {
@@ -20,7 +21,7 @@ class Category {
 
 
 function newBar(budget, total) {
-  
+
   let newBudget = `<div class="budgetBox"><div
   class="label-center"
   id="${budget}"
@@ -32,18 +33,18 @@ function newBar(budget, total) {
   node.innerHTML = newBudget;
   document.getElementById("insertBudget").appendChild(node);
 
-    // inserts users name at top
-    // let userName = document.getElementById("userName");
-    // let addName = document.createElement("h1");
-    // addName.innerHTML = userName;
-    // document.getElementById("insertName").appendChild(addName);
-  
-  
-  
-  
+  // inserts users name at top
+  // let userName = document.getElementById("userName");
+  // let addName = document.createElement("h1");
+  // addName.innerHTML = userName;
+  // document.getElementById("insertName").appendChild(addName);
+
+
+
+
   /* construct manually */
   let bar = new ldBar(`#${budget}`, { preset: "bubble" });
-  
+
   // divides total by spent to create percentage amount below 100
   let c = (50 / total) * 100;
   // let d = (spent2 / total2) * 100;
@@ -59,15 +60,17 @@ function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
 
-function submit() { 
+function submit() {
   let cats = document.getElementsByClassName("data-entry");
-  
-  for(let arry of cats) {
-    if(arry.value) {
+
+  for (let arry of cats) {
+    if (arry.value) {
       newBar(arry.name, arry.value);
+      categories[arry.name] = new Category(Number(arry.value));
     }
   }
 
-  
+  let babar = new PortionBar(document.getElementById("babar"), categories);
 }
+
 
