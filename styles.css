@@ -42,25 +42,22 @@
 }
 
 .data-entry{
-margin-bottom: 10px;
-
+    margin-bottom: 10px;
+    
 }
 
 body {
-  height: 100vh;
-  width: 100vw;
-  background-color: #F3FCFF;
+    background-color: #F3FCFF;
 }
 
 ul {
- display: flex;
- justify-content: space-evenly;
- flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 li {
-  list-style-type: none;
-  padding: 3px;
-  padding: 5px;
+    list-style-type: none;
+    padding: 5px;
 }
 
 
@@ -118,3 +115,21 @@ li {
     color: rgb(236, 100, 100);
     text-shadow: opx -1px 1px rgb(150, 7, 7), 1px 1px 1px white;
 }
+
+.dropdown {
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }

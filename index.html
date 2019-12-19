@@ -43,20 +43,20 @@
 
 
 <div id="insertName">
-
+    
 </div>
 
 <form>
     <div class="buttonContent">
-        <a href="#" class="button add">
-            <i class="fas fa-plus"></i>
-        </a>
-        <a href="#" class="button edit">
-            <i class="far fa-edit"></i>
-        </a>
-        <a href="#" class="button remove">
-            <i class="fas fa-trash-alt"></i>
-        </a>
+    
+        <div class="dropdown">
+            <button class="button add" class="dropbtn" onclick="addCatToButton()"> <i class="fas fa-plus" ></i> </button>
+
+            <div class="dropdown-content" id="addCat">
+            </div>
+          </div>
+        <button class="button edit"> <i class="far fa-edit"></i></button>
+        <button class="button remove"> <i class="fas fa-trash-alt"></i></button>
     </div>    
 </form>
 <div class="pBar">
