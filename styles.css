@@ -2,8 +2,7 @@
 #form-head{
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-    
+       
 }
 
 .open-button{
@@ -31,11 +30,48 @@
 
 #myForm{
     display: none;
-    position: fixed;
-    background: linear-gradient(to bottom, green, white);
+    position: absolute;
+    padding: 20px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: darkgreen;
+    background: linear-gradient(to bottom, rgb(79, 202, 79), white);
+    
 }
 
 .title{
+    display: flex;
+    justify-content: center;
+}
+
+.inserts {
+    padding: 10px;
+    list-style-type: none;
+    
+  }
+
+input{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-color: green;
+    background: transparent;
+}
+
+button{
+    padding: 10px;
+    margin-right: 10px;
+    background-color: white;
+    border-color: darkgreen;
+    background-color: transparent;
+    color: darkgreen;
+    text-emphasis: bold;
+    font-weight: bold;
+    
+
+}
+
+#insertName{
     display: flex;
     justify-content: center;
     

@@ -67,12 +67,17 @@ function submit() {
       categories[arry.name] = new Category(Number(arry.value),bar);
     }
   }
-  // inserts users name at top
-  let userName = document.getElementById("userName");
-  let addName = document.createElement("h1");
-  addName.innerHTML = userName.value;
-  document.getElementById("insertName").innerHTML = addName.outerHTML;
-  
+    // inserts users name at top
+    let userName = document.getElementById("userName");
+    let addName = document.createElement("h1");
+    if(userName.value){
+    addName.innerHTML = userName.value + "'s Budget";
+    } else {
+
+    }
+    
+    document.getElementById("insertName").innerHTML = addName.outerHTML;
+
   let babar = new PortionBar(document.getElementById("babar"), categories);
 }
 
