@@ -6,6 +6,10 @@
        
 }
 
+.form-container {
+    z-index: 5;
+}
+
 .open-button{
     padding: 15px 25px;
     font-size: 24px;
@@ -70,7 +74,6 @@ input{
 button{
     padding: 10px;
     margin-right: 10px;
-    background-color: white;
     border-color: darkgreen;
     background-color: transparent;
     color: darkgreen;
@@ -200,3 +203,120 @@ h2 {
       margin-right: 45px;
       padding: 0px;
   }
+
+@media(min-width: 786px){
+    .button{
+        border-radius: 0%;
+        width:250px;
+        background-image: none;
+        box-shadow: none;
+    }
+
+    .add{
+        transition: all .5s;
+    }
+
+    .add-white{
+        background: #fff;
+    }
+
+    .add:hover{
+        box-shadow:0px 10px 10px rgba(0,0,0,0.2);
+        transform : translateY(-3px);
+    }
+
+    .add:active{
+        box-shadow:0px 5px 10px rgba(0,0,0,0.2);
+        transform:translateY(-1px);
+    }
+
+    .add-bottom-animation-1{
+        animation:comeFromBottom 1s ease-out .8s;
+    }
+
+    .add::after{
+        z-index:-1;
+        transition: all .5s;
+    }
+
+    .add-white::after {
+        background: #fff;
+    }
+
+    .add-animation-1:hover::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+    }
+
+    @keyframes comeFromBottom{
+        0%{
+          opacity:0;
+          transform:translateY(40px);
+        } 
+        100%{
+          opacity:1;
+          transform:translateY(0);
+        }
+      }
+
+    .edit{
+        transition: all 0.5s;
+    }
+
+    .edit:hover{
+        color: blue;
+    }
+
+    .remove{
+        transition: all 0.5s;
+        position: relative;
+        box-shadow: none;
+        background-image: none;
+    }
+
+    .remove span{
+        z-index: 2;
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .remove::before{
+        content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.5s;
+    border: 1px solid rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 0);
+    }
+
+    .remove::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 0.5s;
+        border: 1px solid rgba(255,255,255,0.2);
+        background-color: rgba(255,255,255,0.1);
+    }
+
+    .remove:hover:before {
+        transform: rotate(-45deg);
+        background-color: rgba(104, 54, 54, 0.219);
+    }
+
+    .remove:hover::after {
+        transform: rotate(45deg);
+        background-color: rgba(104, 54, 54, 0.219);
+    }
+
+
+}
