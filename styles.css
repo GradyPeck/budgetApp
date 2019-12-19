@@ -46,17 +46,15 @@
 
 .inserts {
     padding: 10px;
-    list-style-type: none;
-    
+    list-style-type: none;  
   }
 
   /* styled enter name and enter total budget to look different than categories */
 .insertsMain {
-    padding-bottom: 10px;
+    padding: 10px;
     list-style-type: none;
     font-size: medium;
     font-weight: bold;
-    
   }
 
 

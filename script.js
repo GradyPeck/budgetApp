@@ -21,7 +21,7 @@ class Category {
   }
 }
 
-
+// creates each budget category
 function newBar(budget, total) {
   
   let newBudget = `<div class="budgetBox"><div
@@ -34,11 +34,6 @@ function newBar(budget, total) {
   let node = document.createElement("li");
   node.innerHTML = newBudget;
   document.getElementById("insertBudget").appendChild(node);
-  
-  
-  
-  
-  
   
   /* construct manually */
   let bar = new ldBar(`#${budget}`, { preset: "bubble" });
@@ -57,7 +52,7 @@ function openForm() {
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
-
+// takes all information from entered budgets and creates new Category
 function submit() {
   let cats = document.getElementsByClassName("data-entry");
   
@@ -84,19 +79,13 @@ function submit() {
 function addCatToButton() {
   let catHtml='';
   for(const cat in categories) {
-    catHtml += `<li>${cat}<input><button onclick="myFunc('${cat}')">Add</button>`
-
-    // console.log(cat);
-    // let add = document.createElement("button");
-    // add.innerHTML = cat;
-    // add.value = cat
-    // add.onclick = (e) => myFunc(e)
-    // document.getElementById("addCat").appendChild(add);
+    catHtml += `<li>${cat}<input type="number"><button onclick="myFunc('${cat}')">Add</button>`
   }
   document.getElementById("addCat").innerHTML = catHtml;
 }
 
 function myFunc(cat){
   categories[cat].addSpent();
+  console.log(categories);
 }
 
