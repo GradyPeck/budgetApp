@@ -1,6 +1,6 @@
 .right {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
 #form-head{
@@ -76,13 +76,14 @@ input{
 }
 
 button{
-    padding: 10px;
+    padding: 5px;
     margin-right: 10px;
     border-color: darkgreen;
     background-color: transparent;
     color: darkgreen;
     text-emphasis: bold;
     font-weight: bold;
+    margin: 5px;
     
 
 }

@@ -104,7 +104,7 @@ function submit() {
 function addCatToButton() {
   let catHtml='';
   for(const cat in categories) {
-    catHtml += `<li>${cat} <input id=${cat} class="right" type="number"><button onclick="plusSpent('${cat}')">Add</button></li>`
+    catHtml += `<li class="right">${cat} <input id=${cat} class="right" type="number"><button onclick="plusSpent('${cat}')">Add</button></li>`
   }
   document.getElementById("addCat").innerHTML = catHtml;
 }
@@ -120,7 +120,7 @@ function plusSpent(cat){
 function addCatToButton2() {
   let catHtml='';
   for(const cat in categories) {
-    catHtml += `<li><button id=${cat} onclick="minusSpent('${cat}')">Reset</button>${cat}</li>`
+    catHtml += `<li class="right"><button id=${cat} onclick="minusSpent('${cat}')">Reset</button>${cat}</li>`
   }
   document.getElementById("addCat2").innerHTML = catHtml;
 }
@@ -136,7 +136,7 @@ function minusSpent(cat){
 function addCatToButton3() {
   let catHtml='';
   for(const cat in categories) {
-    catHtml += `<li><button onclick="minusCat('${cat}')">Remove Budget</button>${cat} </li>`
+    catHtml += `<li class="right"><button onclick="minusCat('${cat}')">Remove Budget</button>${cat} </li>`
   }
   document.getElementById("addCat3").innerHTML = catHtml;
 }
