@@ -23,9 +23,9 @@
     
         <ul>
         
-        <li class="inserts">Enter your name:<input type="text" name="name" id="userName" /></li>
+        <li class="insertsMain" >Enter your name:<input type="text" name="name" id="userName" /></li>
         
-        <li class="inserts">Enter Total budget:<input type="number" name="Total"/></li>
+        <li class="insertsMain">Enter Total budget:<input type="number" name="Total"/></li>
         
         <li class="inserts">Entertainment Budget Total:<input type="number" name="Entertainment" class="data-entry"/></li>
         
@@ -47,36 +47,40 @@
     <!-- User name will go here -->
 </div>
 
-<form>
     <div class="buttonContent">
-        <a href="#" class="button add">
-            <i class="fas fa-plus"></i>
-        </a>
-        <a href="#" class="button edit">
-            <i class="far fa-edit"></i>
-        </a>
-        <a href="#" class="button remove">
-            <i class="fas fa-trash-alt"></i>
-        </a>
+    
+        <div class="dropdown">
+            <button class="button add" class="dropbtn" onclick="addCatToButton()"> <i class="fas fa-plus" ></i> </button>
+
+            <div class="dropdown-content" id="addCat">
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="button edit" class="dropbtn" onclick="addCatToButton2()"> <i class="far fa-edit" ></i> </button>
+
+            <div class="dropdown-content" id="addCat2">
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="button remove" class="dropbtn" onclick="addCatToButton3()"> <i class="fas fa-trash-alt" ></i> </button>
+
+            <div class="dropdown-content" id="addCat3">
+            </div>
+          </div>
+
     </div>    
-</form>
-<div class="pBar">
-    
-    <div class="portionBar" id="babar"></div>
-</div>
 
-
-
-<ul id="insertBudget">
-    
+<ul class="pBar">
+    <li><h2>Total Budget</h2></li>
+    <li><div class="portionBar" id="babar"></div></li>
 </ul>
 
-
+<ul id="insertBudget">
+    <!-- budget circles will be inserted here when created by user -->
+</ul>
 
 <script src="portionBar.js"></script>
 <script src="./script.js"></script>
 
 </body>
-
-
 </html>
