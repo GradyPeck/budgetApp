@@ -19,7 +19,25 @@ class Category {
       this.progressBar.set(newSpent/this.allocation * 100)
     }
   }
+
+  minusSpent(expenditure) {
+    let newSpent = this.spent -= expenditure;
+    if (newSpent > this.allocation) {
+      //squib expenditure
+    }
+    else {
+      this.spent = newSpent;
+      this.progressBar.set(newSpent/this.allocation * 100)
+    }
+  }
+
+  // ** NEEDS TO BE CREATED **
+  removeCat() {
+    console.log("removed")
+  }
+
 }
+
 
 // creates each budget category
 function newBar(budget, total) {
@@ -81,17 +99,49 @@ function submit() {
   let babar = new PortionBar(document.getElementById("babar"), categories);
 }
 
+// adds all created budgets to add button
 function addCatToButton() {
   let catHtml='';
   for(const cat in categories) {
-    catHtml += `<li>${cat}<input id="inputIncome" type="number"><button onclick="myFunc('${cat}')">Add</button>`
+    catHtml += `<li>${cat}<input id="inputIncome" type="number"><button onclick="plusSpent('${cat}')">Add</button>`
   }
   document.getElementById("addCat").innerHTML = catHtml;
 }
 
-function myFunc(cat){
+function plusSpent(cat){
+    let inputIncome = document.getElementById("inputIncome").value; //string
+    inputIncome = Number.parseFloat(inputIncome); //number
+    categories[cat].addSpent(inputIncome);
+    console.log(categories);
+}
+
+// adds all created budgets to edit button
+function addCatToButton2() {
+  let catHtml='';
+  for(const cat in categories) {
+    catHtml += `<li>${cat}<input id="inputIncome" type="number"><button onclick="minusSpent('${cat}')">Subtract</button>`
+  }
+  document.getElementById("addCat2").innerHTML = catHtml;
+}
+
+function minusSpent(cat){
   let inputIncome = document.getElementById("inputIncome").value; //string
   inputIncome = Number.parseFloat(inputIncome); //number
-  categories[cat].addSpent(inputIncome);
+  categories[cat].minusSpent(inputIncome);
+  console.log(categories);
+}
+
+// adds all created budgets to remove button
+function addCatToButton3() {
+  let catHtml='';
+  for(const cat in categories) {
+    catHtml += `<li>${cat}<button onclick="removeCat('${cat}')">Remove Budget</button>`
+  }
+  document.getElementById("addCat3").innerHTML = catHtml;
+}
+
+  // remove category created by user
+function removeCat(cat) {
+  categories[cat].removeCat(cat);
 }
 
