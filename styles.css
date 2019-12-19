@@ -30,6 +30,7 @@
 
 #myForm{
     display: none;
+    width: 95%;
     position: absolute;
     padding: 20px;
     border-style: solid;
@@ -83,8 +84,6 @@ margin-bottom: 10px;
 }
 
 body {
-  height: 100vh;
-  width: 100vw;
   background-color: #F3FCFF;
 }
 
