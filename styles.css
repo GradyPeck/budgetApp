@@ -45,49 +45,62 @@
         border-radius: 0%;
         width:250px;
         background-image: none;
-        
-    }
-
-    .edit{
         box-shadow: none;
     }
 
-    .edit::before, .edit::after{
-        position: absolute;
-        width: 100%;
-	    height: 100%;
-        bottom: 0;
-	    left: 0;
-        z-index: 1;
-        transition: all 0.3s;
-        border: 1px solid rgba(255, 255, 255, 0.5);
-    }
-    .edit:hover::before{
-        animation-name: rotateCW;
-        animation-duration: 3s;
-        left: 96px;
-        width: 64px;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
+    .add{
+        transition: all .5s;
     }
 
-    .edit:hover::after{
-        animation-name: rotateCCW;
-        animation-duration: 2s;
-        left: 96px;
-        width: 64px;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
+    .add-white{
+        background: #fff;
     }
 
-    @keyframes rotatecw {
-        from {transform: rotate(0deg);}
-        to {transform: rotate(360deg);}
+    .add:hover{
+        box-shadow:0px 10px 10px rgba(0,0,0,0.2);
+        transform : translateY(-3px);
     }
-    
-    @keyframes rotateccw {
-        from {transform: rotate(0deg);}
-        to {transform: rotate(-360deg);}
+
+    .add:active{
+        box-shadow:0px 5px 10px rgba(0,0,0,0.2);
+        transform:translateY(-1px);
+    }
+
+    .add-bottom-animation-1{
+        animation:comeFromBottom 1s ease-out .8s;
+    }
+
+    .add::after{
+        z-index:-1;
+        transition: all .5s;
+    }
+
+    .add-white::after {
+        background: #fff;
+    }
+
+    .add-animation-1:hover::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+    }
+
+    @keyframes comeFromBottom{
+        0%{
+          opacity:0;
+          transform:translateY(40px);
+        } 
+        100%{
+          opacity:1;
+          transform:translateY(0);
+        }
+      }
+
+    .edit{
+        transition: all 0.5s;
+    }
+
+    .edit:hover{
+        color: blue;
     }
 
     .remove{
