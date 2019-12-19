@@ -24,13 +24,18 @@ class Category {
 // creates each budget category
 function newBar(budget, total) {
   
-  let newBudget = `<div class="budgetBox"><div
-  class="label-center"
-  id="${budget}"
-  
-  ></div><div></div>
-  <h2>${budget}</h2>
-  <p>$0 of ${total} Spent</p></div>`;
+  let newBudget = 
+  `<ul class="budgetBox">
+    <li>
+      <div class="label-center" id="${budget}"></div>
+    </li>
+    <li>
+      <h2>${budget}</h2>
+    </li>
+    <li>
+      <p>$0 of ${total} Spent</p>
+    </li>
+  </ul>`;
   let node = document.createElement("li");
   node.innerHTML = newBudget;
   document.getElementById("insertBudget").appendChild(node);
@@ -62,17 +67,17 @@ function submit() {
       categories[arry.name] = new Category(Number(arry.value),bar);
     }
   }
-    // inserts users name at top
-    let userName = document.getElementById("userName");
-    let addName = document.createElement("h1");
-    if(userName.value){
+  // inserts users name at top
+  let userName = document.getElementById("userName");
+  let addName = document.createElement("h1");
+  if(userName.value){
     addName.innerHTML = userName.value + "'s Budget";
-    } else {
-
-    }
+  } else {
     
-    document.getElementById("insertName").innerHTML = addName.outerHTML;
-
+  }
+  
+  document.getElementById("insertName").innerHTML = addName.outerHTML;
+  
   let babar = new PortionBar(document.getElementById("babar"), categories);
 }
 
