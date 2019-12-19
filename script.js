@@ -33,7 +33,7 @@ function newBar(budget, total) {
       <h2>${budget}</h2>
     </li>
     <li>
-      <p>$0 of ${total} Spent</p>
+      <p>$ of ${total} Spent</p>
     </li>
   </ul>`;
   let node = document.createElement("li");
@@ -84,13 +84,14 @@ function submit() {
 function addCatToButton() {
   let catHtml='';
   for(const cat in categories) {
-    catHtml += `<li>${cat}<input type="number"><button onclick="myFunc('${cat}')">Add</button>`
+    catHtml += `<li>${cat}<input id="inputIncome" type="number"><button onclick="myFunc('${cat}')">Add</button>`
   }
   document.getElementById("addCat").innerHTML = catHtml;
 }
 
 function myFunc(cat){
-  categories[cat].addSpent();
-  console.log(categories);
+  let inputIncome = document.getElementById("inputIncome").value; //string
+  inputIncome = Number.parseFloat(inputIncome); //number
+  categories[cat].addSpent(inputIncome);
 }
 
