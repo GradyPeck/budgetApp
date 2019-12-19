@@ -32,19 +32,6 @@ function newBar(budget, total) {
   let node = document.createElement("li");
   node.innerHTML = newBudget;
   document.getElementById("insertBudget").appendChild(node);
-<<<<<<< HEAD
-
-  // inserts users name at top
-  // let userName = document.getElementById("userName");
-  // let addName = document.createElement("h1");
-  // addName.innerHTML = userName;
-  // document.getElementById("insertName").appendChild(addName);
-
-
-
-
-=======
->>>>>>> 583eac85fb357bd8d60e2b460ae5d52b491ea9fc
   
   /* construct manually */
   let bar = new ldBar(`#${budget}`, { preset: "bubble" });
@@ -76,7 +63,12 @@ function submit() {
     // inserts users name at top
     let userName = document.getElementById("userName");
     let addName = document.createElement("h1");
-    addName.innerHTML = userName.value;
+    if(userName.value){
+    addName.innerHTML = userName.value + "'s Budget";
+    } else {
+
+    }
+    
     document.getElementById("insertName").innerHTML = addName.outerHTML;
 
   let babar = new PortionBar(document.getElementById("babar"), categories);

@@ -18,22 +18,27 @@
     <button class="open-button" onclick="openForm()" >Create Budget</button>
 
     <div class="form-container" id="myForm" style="display:block">
-        <div><h1 name="title">My Weekly Budget</h1></div>
         
-        <div>Enter your name:<input type="text" name="name" id="userName" /></div>
+        <div><h1 class="title">My Weekly Budget</h1></div>
+    
+        <ul>
         
-        <div>Enter Total budget:<input type="number" name="Total"/></div>
+        <li class="inserts">Enter your name:<input type="text" name="name" id="userName" /></li>
         
-        <div>Entertainment Budget Total:<input type="number" name="Entertainment" class="data-entry"/></div>
+        <li class="inserts">Enter Total budget:<input type="number" name="Total"/></li>
         
-        <div>Food Budget Total:<input type="number" name="Food" class="data-entry"/></div>
+        <li class="inserts">Entertainment Budget Total:<input type="number" name="Entertainment" class="data-entry"/></li>
         
-        <div>Clothing Budget Total:<input type="number" name="Clothing" class="data-entry"/></div>
+        <li class="inserts">Food Budget Total:<input type="number" name="Food" class="data-entry"/></li>
         
-        <div>Bills Budget Total:<input type="number" name="Bills" class="data-entry" /></div>
+        <li class="inserts">Clothing Budget Total:<input type="number" name="Clothing" class="data-entry"/></li>
         
-        <div>Savings Budget Total:<input type="number" name="Savings"  class="data-entry"/></div>
+        <li class="inserts">Bills Budget Total:<input type="number" name="Bills" class="data-entry" /></li>
         
+        <li class="inserts">Savings Budget Total:<input type="number" name="Savings"  class="data-entry"/></li>
+        
+    </ul>
+
         <button class="btn" onclick="submit(); closeForm()">Submit</button>
         <button class="btn cancel" onclick="closeForm()">Cancel</button>
     </div>
