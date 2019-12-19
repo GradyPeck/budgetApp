@@ -33,6 +33,7 @@ class Category {
 
   // ** NEEDS TO BE CREATED **
   removeCat() {
+    
     console.log("removed")
   }
 
@@ -103,29 +104,29 @@ function submit() {
 function addCatToButton() {
   let catHtml='';
   for(const cat in categories) {
-    catHtml += `<li>${cat}<input id="inputIncome" type="number"><button onclick="plusSpent('${cat}')">Add</button>`
+    catHtml += `<li>${cat} <input id=${cat} class="right" type="number"><button onclick="plusSpent('${cat}')">Add</button></li>`
   }
   document.getElementById("addCat").innerHTML = catHtml;
 }
 
 function plusSpent(cat){
-    let inputIncome = document.getElementById("inputIncome").value; //string
+    let inputIncome = document.getElementById(cat).value; //string
     inputIncome = Number.parseFloat(inputIncome); //number
     categories[cat].addSpent(inputIncome);
-    console.log(categories);
+    console.log(inputIncome);
 }
 
 // adds all created budgets to edit button
 function addCatToButton2() {
   let catHtml='';
   for(const cat in categories) {
-    catHtml += `<li>${cat}<input id="inputIncome" type="number"><button onclick="minusSpent('${cat}')">Subtract</button>`
+    catHtml += `<li><button id=${cat} onclick="minusSpent('${cat}')">Reset</button>${cat}</li>`
   }
   document.getElementById("addCat2").innerHTML = catHtml;
 }
 
 function minusSpent(cat){
-  let inputIncome = document.getElementById("inputIncome").value; //string
+  let inputIncome = document.getElementById(cat).value; //string
   inputIncome = Number.parseFloat(inputIncome); //number
   categories[cat].minusSpent(inputIncome);
   console.log(categories);
@@ -135,13 +136,13 @@ function minusSpent(cat){
 function addCatToButton3() {
   let catHtml='';
   for(const cat in categories) {
-    catHtml += `<li>${cat}<button onclick="removeCat('${cat}')">Remove Budget</button>`
+    catHtml += `<li><button onclick="minusCat('${cat}')">Remove Budget</button>${cat} </li>`
   }
   document.getElementById("addCat3").innerHTML = catHtml;
 }
 
   // remove category created by user
-function removeCat(cat) {
+function minusCat(cat) {
   categories[cat].removeCat(cat);
 }
 
