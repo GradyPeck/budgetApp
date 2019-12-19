@@ -50,6 +50,16 @@
     
   }
 
+  /* styled enter name and enter total budget to look different than categories */
+.insertsMain {
+    padding-bottom: 10px;
+    list-style-type: none;
+    font-size: medium;
+    font-weight: bold;
+    
+  }
+
+
 input{
     border-top: none;
     border-right: none;

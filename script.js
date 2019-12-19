@@ -97,6 +97,6 @@ function addCatToButton() {
 }
 
 function myFunc(cat){
-  categories[cat].addSpent()
+  categories[cat].addSpent();
 }
 
