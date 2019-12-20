@@ -1,3 +1,8 @@
+.center, p {
+    display: flex;
+    padding: 2px;
+}
+
 .right {
     display: flex;
     justify-content: space-between;
@@ -324,6 +329,5 @@ h2 {
         transform: rotate(45deg);
         background-color: rgba(104, 54, 54, 0.219);
     }
-
 
 }
