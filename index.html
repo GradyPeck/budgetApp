@@ -11,42 +11,37 @@
     <script src="https://kit.fontawesome.com/b36805c446.js" crossorigin="anonymous"></script>
     
 </head>
-
-
-<header id="form-head">
-
-    <button class="open-button" onclick="openForm()" >Create Budget</button>
-
-    <div class="form-container" id="myForm" style="display:block">
+<body>
+    <header id="form-head">
+        <button class="open-button" onclick="openForm()" >Create Budget</button>
+        <div class="form-container" id="myForm" style="display:block">
         
-        <div><h1 class="title">My Weekly Budget</h1></div>
+            <div><h1 class="title">My Weekly Budget</h1></div>
     
-        <ul>
+            <ul>
+                <li class="insertsMain" >Enter your name:<input type="text" name="name" id="userName" /></li>
         
-        <li class="insertsMain" >Enter your name:<input type="text" name="name" id="userName" /></li>
+                <li class="insertsMain">Enter Total budget:<input type="number" name="Total"/></li>
         
-        <li class="insertsMain">Enter Total budget:<input type="number" name="Total"/></li>
+                <li class="inserts">Entertainment Budget Total:<input type="number" name="Entertainment" class="data-entry"/></li>
         
-        <li class="inserts">Entertainment Budget Total:<input type="number" name="Entertainment" class="data-entry"/></li>
+                <li class="inserts">Food Budget Total:<input type="number" name="Food" class="data-entry"/></li>
         
-        <li class="inserts">Food Budget Total:<input type="number" name="Food" class="data-entry"/></li>
+                <li class="inserts">Clothing Budget Total:<input type="number" name="Clothing" class="data-entry"/></li>
         
-        <li class="inserts">Clothing Budget Total:<input type="number" name="Clothing" class="data-entry"/></li>
+                <li class="inserts">Bills Budget Total:<input type="number" name="Bills" class="data-entry" /></li>
         
-        <li class="inserts">Bills Budget Total:<input type="number" name="Bills" class="data-entry" /></li>
+                <li class="inserts">Savings Budget Total:<input type="number" name="Savings"  class="data-entry"/></li>
         
-        <li class="inserts">Savings Budget Total:<input type="number" name="Savings"  class="data-entry"/></li>
-        
-    </ul>
+            </ul>
 
-        <button class="btn" onclick="submit(); closeForm()">Submit</button>
-        <button class="btn cancel" onclick="closeForm()">Cancel</button>
-    </div>
-</header>
-<div id="insertName">
+            <button class="btn" onclick="submit(); closeForm()">Submit</button>
+            <button class="btn cancel" onclick="closeForm()">Cancel</button>
+        </div>
+    </header>
+    <div id="insertName">
     <!-- User name will go here -->
-</div>
-
+    </div>
     <div class="buttonContent">
     
         <div class="dropdown">
@@ -70,17 +65,17 @@
 
     </div>    
 
-<ul class="pBar">
-    <li><h2>Total Budget</h2></li>
-    <li><div class="portionBar" id="babar"></div></li>
-</ul>
+    <ul class="pBar">
+        <li><h2>Total Budget</h2></li>
+        <li><div class="portionBar" id="babar"></div></li>
+    </ul>
 
-<ul id="insertBudget">
+    <ul id="insertBudget">
     <!-- budget circles will be inserted here when created by user -->
-</ul>
+    </ul>
 
-<script src="portionBar.js"></script>
-<script src="./script.js"></script>
+    <script src="portionBar.js"></script>
+    <script src="./script.js"></script>
 
 </body>
 </html>
