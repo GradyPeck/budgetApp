@@ -227,14 +227,11 @@ h2 {
         font-family: 'Alfa Slab One', cursive;
     }
 
-<<<<<<< HEAD
     h1{
         background-clip: text;
 
-=======
     h1 {
         background-clip: text;
->>>>>>> df65bdbc627702c0146302b68ddabe1862bddd3d
         -webkit-background-clip: text;
   	    -webkit-text-fill-color: transparent;	
 	    background-image: url(http://getwallpapers.com/wallpaper/full/e/a/1/1164287-large-3d-money-wallpapers-2123x1664-for-xiaomi.jpg);
