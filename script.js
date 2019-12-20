@@ -16,25 +16,25 @@ class Category {
     }
     else {
       this.spent = newSpent;
-      this.progressBar.set(newSpent/this.allocation * 100)
+      this.progressBar.set(newSpent/this.allocation * 100);
     }
   }
 
-  minusSpent(expenditure) {
+  undoSpent(expenditure) {
     let newSpent = this.spent -= expenditure;
     if (newSpent > this.allocation) {
       //squib expenditure
     }
     else {
       this.spent = newSpent;
-      this.progressBar.set(newSpent/this.allocation * 100)
+      this.progressBar.set(newSpent/this.allocation * 100);
     }
   }
 
   // ** NEEDS TO BE CREATED **
   removeCat() {
     
-    console.log("removed")
+    console.log("removed");
   }
 
 }
@@ -120,15 +120,15 @@ function plusSpent(cat){
 function addCatToButton2() {
   let catHtml='';
   for(const cat in categories) {
-    catHtml += `<li class="right"><button id=${cat} onclick="minusSpent('${cat}')">Reset</button>${cat}</li>`
+    catHtml += `<li class="right"><button id=${cat} onclick="undoSpent('${cat}')">Reset</button>${cat}</li>`
   }
   document.getElementById("addCat2").innerHTML = catHtml;
 }
 
-function minusSpent(cat){
+function undoSpent(cat){
   let inputIncome = document.getElementById(cat).value; //string
   inputIncome = Number.parseFloat(inputIncome); //number
-  categories[cat].minusSpent(inputIncome);
+  categories[cat].undoSpent(inputIncome);
   console.log(categories);
 }
 
