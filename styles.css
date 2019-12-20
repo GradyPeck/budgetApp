@@ -224,6 +224,7 @@ h2 {
     }
 
     h1{
+        background-clip: text;
         -webkit-background-clip: text;
   	    -webkit-text-fill-color: transparent;	
 	    background-image: url(http://getwallpapers.com/wallpaper/full/e/a/1/1164287-large-3d-money-wallpapers-2123x1664-for-xiaomi.jpg);
