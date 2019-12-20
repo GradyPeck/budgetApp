@@ -1,5 +1,5 @@
 body{
-    background: linear-gradient(110deg, #b5f0dc 60%, #e2fff9 60%);
+    background: linear-gradient(110deg, #8aebcb 60%, #4fa383 60%);
     font-family: 'Alata', sans-serif;
 }
 
@@ -352,8 +352,8 @@ h2 {
         height: 100%;
         z-index: 1;
         transition: all 0.5s;
-        border: 1px solid rgba(255,255,255,0.2);
-        background-color: rgba(255,255,255,0.1);
+        border: 1px solid rgba(255, 255, 255, 0);
+        background-color: rgba(255, 255, 255, 0);
     }
 
     .remove:hover:before {
