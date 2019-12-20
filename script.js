@@ -45,7 +45,7 @@ function newBar(budget, total) {
       <h2>${budget}</h2>
     </li>
     <li class="center">
-      <p id=${budget}-spent>$0</p><p> of ${total} Spent</p>
+      <p id=${budget}-spent>$0</p><p> of $${total} Spent</p>
     </li>
   </ul>`;
   let node = document.createElement("li");
@@ -130,7 +130,11 @@ function undoSpent(cat){
   let inputIncome = document.getElementById(cat).value; //string
   inputIncome = Number.parseFloat(inputIncome); //number
   categories[cat].undoSpent(inputIncome);
+  let oodles = document.getElementById(`${cat}-spent`).innerText;
+  document.getElementById(`${cat}-spent`).innerText = Number(oodles.slice(1, oodles.length)) - inputIncome;
+  babar.resizePortions();
 }
+
 
 // adds all created budgets to remove button
 function addCatToButton3() {
