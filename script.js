@@ -16,7 +16,7 @@ class Category {
     }
     else {
       this.spent = newSpent;
-      this.progressBar.set(newSpent/this.allocation * 100)
+      this.progressBar.set(newSpent/this.allocation * 100);
     }
   }
 
@@ -27,7 +27,7 @@ class Category {
     }
     else {
       this.spent = newSpent;
-      this.progressBar.set(newSpent/this.allocation * 100)
+      this.progressBar.set(newSpent/this.allocation * 100);
     }
   }
 }
@@ -71,7 +71,7 @@ function closeForm() {
 // takes all information from entered budgets and creates new Category
 function submit() {
   let cats = document.getElementsByClassName("data-entry");
-  
+  document.getElementById("insertBudget").innerHTML = ''; //Clears array
   for (let arry of cats) {
     if (arry.value) {
       let bar = newBar(arry.name, arry.value);

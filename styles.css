@@ -3,6 +3,11 @@
     padding: 2px;
 }
 
+body {
+    background: linear-gradient(110deg, #b5f0dc 60%, #e2fff9 60%);
+    font-family: 'Alata', sans-serif;
+}
+
 .right {
     display: flex;
     justify-content: space-between;
@@ -30,6 +35,7 @@
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
+    margin-top: 10px;
 }
 
 .open-button:hover{
@@ -43,10 +49,11 @@
 }
 
 #myForm{
-    display: none;
-    width: 95%;
+    display: flex;
     position: absolute;
-    padding: 20px;
+    justify-content: center;
+    padding: 10px;
+    width: 95%;
     border-style: solid;
     border-width: 5px;
     border-color: darkgreen;
@@ -164,6 +171,7 @@ h2 {
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    border: none;
 }
 
 .add{
@@ -216,6 +224,39 @@ h2 {
   }
 
 @media(min-width: 786px){
+    body{
+        font-family: 'Alfa Slab One', cursive;
+    }
+
+    h1{
+        -webkit-background-clip: text;
+  	    -webkit-text-fill-color: transparent;	
+	    background-image: url(http://getwallpapers.com/wallpaper/full/e/a/1/1164287-large-3d-money-wallpapers-2123x1664-for-xiaomi.jpg);
+	    background-size: auto;
+	    background-attachment: unset;
+	    background-position: 0%;
+	    width: 80%;
+	    margin: 10%;
+	    font-size: 134px;
+	    animation: moneyMoving infinite 220s;
+	    animation-fill-mode: forwards;
+	    animation-play-state: running;
+	    animation-timing-function: linear;
+        text-align: center;
+    }
+    @keyframes moneyMoving {
+	    0% {
+	    	background-position: 0%;	
+	    }
+	    50% {
+	    	background-position: 100%;	
+	    }
+	    100% {
+	    	background-position: 0%;
+	    }
+    }
+
+
     .button{
         border-radius: 0%;
         width:250px;
