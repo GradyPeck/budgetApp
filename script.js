@@ -23,7 +23,7 @@ class Category {
 
   undoSpent(expenditure) {
     let newSpent = this.spent -= expenditure;
-    if (newSpent > this.allocation) {
+    if (newSpent < 0) {
       //squib expenditure
     }
     else {
