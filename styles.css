@@ -237,7 +237,7 @@ h2 {
 	    background-position: 0%;
 	    width: 80%;
 	    margin: 10%;
-	    font-size: 134px;
+	    font-size: 120px;
 	    animation: moneyMoving infinite 220s;
 	    animation-fill-mode: forwards;
 	    animation-play-state: running;
@@ -358,8 +358,8 @@ h2 {
         height: 100%;
         z-index: 1;
         transition: all 0.5s;
-        border: 1px solid rgba(255,255,255,0.2);
-        background-color: rgba(255,255,255,0.1);
+        border: 1px solid rgba(255, 255, 255, 0);
+        background-color: rgba(255, 255, 255, 0);
     }
 
     .remove:hover:before {
