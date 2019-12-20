@@ -224,6 +224,7 @@ h2 {
     }
 
     h1{
+
         -webkit-background-clip: text;
   	    -webkit-text-fill-color: transparent;	
 	    background-image: url(http://getwallpapers.com/wallpaper/full/e/a/1/1164287-large-3d-money-wallpapers-2123x1664-for-xiaomi.jpg);
@@ -232,7 +233,7 @@ h2 {
 	    background-position: 0%;
 	    width: 80%;
 	    margin: 10%;
-	    font-size: 134px;
+	    font-size: 120px;
 	    animation: moneyMoving infinite 220s;
 	    animation-fill-mode: forwards;
 	    animation-play-state: running;
