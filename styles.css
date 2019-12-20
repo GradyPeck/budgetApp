@@ -1,6 +1,6 @@
 body{
     background: linear-gradient(110deg, #b5f0dc 60%, #e2fff9 60%);
-    font-family: 'Luckiest Guy', cursive;
+    font-family: 'Alata', sans-serif;
 }
 
 .right {
@@ -218,8 +218,7 @@ h2 {
 
 @media(min-width: 786px){
     body{
-        background: linear-gradient(110deg, #b5f0dc 60%, #e2fff9 60%);
-        font-family: 'Cinzel', serif;
+        font-family: 'Alfa Slab One', cursive;
     }
 
     h1{
@@ -236,7 +235,7 @@ h2 {
 	    animation-fill-mode: forwards;
 	    animation-play-state: running;
 	    animation-timing-function: linear;
-	    text-align: center;
+        text-align: center;
     }
     @keyframes moneyMoving {
 	    0% {
