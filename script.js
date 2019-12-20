@@ -79,7 +79,7 @@ function closeForm() {
 // takes all information from entered budgets and creates new Category
 function submit() {
   let cats = document.getElementsByClassName("data-entry");
-  
+  document.getElementById("insertBudget").innerHTML = ''; //Clears array
   for (let arry of cats) {
     if (arry.value) {
       let bar = newBar(arry.name, arry.value);
