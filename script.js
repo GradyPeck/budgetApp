@@ -32,6 +32,11 @@ class Category {
     }
   }
 
+  // ** NEEDS TO BE CREATED **
+  removeCat() {
+    
+    console.log("removed");
+  }
 
 }
 

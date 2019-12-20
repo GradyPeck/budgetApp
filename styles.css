@@ -1,5 +1,5 @@
 body{
-    background: linear-gradient(110deg, #b5f0dc 60%, #e2fff9 60%);
+    background: linear-gradient(110deg, #8aebcb 60%, #4fa383 60%);
     font-family: 'Alata', sans-serif;
 }
 
@@ -225,6 +225,7 @@ h2 {
 
     h1{
         background-clip: text;
+
         -webkit-background-clip: text;
   	    -webkit-text-fill-color: transparent;	
 	    background-image: url(http://getwallpapers.com/wallpaper/full/e/a/1/1164287-large-3d-money-wallpapers-2123x1664-for-xiaomi.jpg);
@@ -233,7 +234,7 @@ h2 {
 	    background-position: 0%;
 	    width: 80%;
 	    margin: 10%;
-	    font-size: 134px;
+	    font-size: 120px;
 	    animation: moneyMoving infinite 220s;
 	    animation-fill-mode: forwards;
 	    animation-play-state: running;
@@ -353,8 +354,8 @@ h2 {
         height: 100%;
         z-index: 1;
         transition: all 0.5s;
-        border: 1px solid rgba(255,255,255,0.2);
-        background-color: rgba(255,255,255,0.1);
+        border: 1px solid rgba(255, 255, 255, 0);
+        background-color: rgba(255, 255, 255, 0);
     }
 
     .remove:hover:before {
