@@ -16,7 +16,7 @@ class Category {
     }
     else {
       this.spent = newSpent;
-      this.progressBar.set(newSpent/this.allocation * 100)
+      this.progressBar.set(newSpent/this.allocation * 100);
     }
   }
 
@@ -27,14 +27,14 @@ class Category {
     }
     else {
       this.spent = newSpent;
-      this.progressBar.set(newSpent/this.allocation * 100)
+      this.progressBar.set(newSpent/this.allocation * 100);
     }
   }
 
   // ** NEEDS TO BE CREATED **
   removeCat() {
     
-    console.log("removed")
+    console.log("removed");
   }
 
 }
