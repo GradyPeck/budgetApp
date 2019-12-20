@@ -31,29 +31,21 @@ class Category {
       this.progressBar.set(newSpent/this.allocation * 100);
     }
   }
-
-  // ** NEEDS TO BE CREATED **
-  removeCat() {
-    
-    console.log("removed");
-  }
-
 }
-
 
 // creates each budget category
 function newBar(budget, total) {
-  
+
   let newBudget = 
-  `<ul class="budgetBox">
+  `<ul id="${budget}-box" class="budgetBox">
     <li>
       <div class="label-center" id="${budget}"></div>
     </li>
     <li>
       <h2>${budget}</h2>
     </li>
-    <li>
-      <p>$ of ${total} Spent</p>
+    <li class="center">
+      <p id=${budget}-spent>$0</p><p> of $${total} Spent</p>
     </li>
   </ul>`;
   let node = document.createElement("li");
@@ -119,6 +111,7 @@ function plusSpent(cat){
     let inputIncome = document.getElementById(cat).value; //string
     inputIncome = Number.parseFloat(inputIncome); //number
     categories[cat].addSpent(inputIncome);
+    document.getElementById(`${cat}-spent`).innerText = `$${inputIncome} `;
     console.log(inputIncome);
 
     babar.resizePortions ();
@@ -128,7 +121,7 @@ function plusSpent(cat){
 function addCatToButton2() {
   let catHtml='';
   for(const cat in categories) {
-    catHtml += `<li class="right"><button id=${cat} onclick="undoSpent('${cat}')">Reset</button>${cat}</li>`
+    catHtml += `<li class="right"><button id=${cat} onclick="undoSpent('${cat}')">Undo</button>${cat}</li>`
   }
   document.getElementById("addCat2").innerHTML = catHtml;
 }
@@ -137,8 +130,11 @@ function undoSpent(cat){
   let inputIncome = document.getElementById(cat).value; //string
   inputIncome = Number.parseFloat(inputIncome); //number
   categories[cat].undoSpent(inputIncome);
-  console.log(categories);
+  let oodles = document.getElementById(`${cat}-spent`).innerText;
+  document.getElementById(`${cat}-spent`).innerText = Number(oodles.slice(1, oodles.length)) - inputIncome;
+  babar.resizePortions();
 }
+
 
 // adds all created budgets to remove button
 function addCatToButton3() {
@@ -151,6 +147,9 @@ function addCatToButton3() {
 
   // remove category created by user
 function minusCat(cat) {
-  categories[cat].removeCat(cat);
+  document.getElementById(cat + "-box");
+  let takeCat = document.getElementById(cat + "-box");
+  takeCat.parentNode.removeChild(takeCat);
+  delete categories[cat];
 }
 
