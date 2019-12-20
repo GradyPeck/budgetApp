@@ -1,6 +1,7 @@
 "use strict";
 
 let categories = {};
+let babar;
 
 class Category {
   constructor(allocation, progressBar) {
@@ -97,7 +98,12 @@ function submit() {
   
   document.getElementById("insertName").innerHTML = addName.outerHTML;
   
-  let babar = new PortionBar(document.getElementById("babar"), categories);
+  babar = new PortionBar(document.getElementById("babar"), categories);
+  let total = 0;
+  for(let catto in categories) {
+    total += categories[catto].allocation;
+  }
+  babar.setTotal(total);
 }
 
 // adds all created budgets to add button
@@ -114,6 +120,8 @@ function plusSpent(cat){
     inputIncome = Number.parseFloat(inputIncome); //number
     categories[cat].addSpent(inputIncome);
     console.log(inputIncome);
+
+    babar.resizePortions ();
 }
 
 // adds all created budgets to edit button
