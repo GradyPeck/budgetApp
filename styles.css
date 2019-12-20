@@ -2,7 +2,6 @@
     display: flex;
     padding: 2px;
 }
-
 body {
     background: linear-gradient(110deg, #b5f0dc 60%, #e2fff9 60%);
     font-family: 'Alata', sans-serif;
@@ -228,7 +227,7 @@ h2 {
         font-family: 'Alfa Slab One', cursive;
     }
 
-    h1{
+    h1 {
         -webkit-background-clip: text;
   	    -webkit-text-fill-color: transparent;	
 	    background-image: url(http://getwallpapers.com/wallpaper/full/e/a/1/1164287-large-3d-money-wallpapers-2123x1664-for-xiaomi.jpg);
@@ -244,6 +243,7 @@ h2 {
 	    animation-timing-function: linear;
         text-align: center;
     }
+
     @keyframes moneyMoving {
 	    0% {
 	    	background-position: 0%;	
