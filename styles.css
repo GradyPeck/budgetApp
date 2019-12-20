@@ -39,6 +39,7 @@
 
 #myForm{
     display: none;
+    width: 95%;
     position: absolute;
     padding: 20px;
     border-style: solid;
@@ -215,6 +216,7 @@ h2 {
         width:250px;
         background-image: none;
         box-shadow: none;
+        border: none;
     }
 
     .add{
