@@ -164,6 +164,7 @@ function minusCat(cat) {
   let takeCat = document.getElementById(cat + "-box");
   takeCat.parentNode.removeChild(takeCat);
   delete categories[cat];
+  babar.portions[cat].element.remove();
   delete babar.portions[cat];
   //these lines refresh portionbar and the Total text
   babar.resizePortions();
