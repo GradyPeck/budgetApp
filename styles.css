@@ -96,8 +96,6 @@ button{
     text-emphasis: bold;
     font-weight: bold;
     margin: 5px;
-    
-
 }
 
 #insertName{
@@ -129,9 +127,11 @@ li {
 .portionBar {
     height: 15px;
     width: 300px;
-    border: 2px solid black;
+    margin-bottom: 3px;
+    border: 1px solid black;
     display: flex;
     flex-direction: row;
+    background-color: white;
 }
 
 /* used to center the portionbar and h2 above it*/

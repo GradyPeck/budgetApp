@@ -38,10 +38,7 @@ class PortionBar {
         let myWidth = getComputedStyle(this.element).width;
         myWidth = Number(myWidth.slice(0, myWidth.length - 2));
         let sizeFactor = myWidth/this.total;
-        console.log(sizeFactor);
         for(let porty in this.portions) {
-            console.log(categories[porty].spent);
-            console.log(categories[porty].spent*sizeFactor);
             this.portions[porty].element.style["width"] = categories[porty].spent*sizeFactor + "px";
         }
     }
