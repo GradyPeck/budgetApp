@@ -26,7 +26,7 @@ class Category {
   undoSpent(expenditure) {
     let newSpent = this.spent -= expenditure;
     if (newSpent < 0) {
-      //squib expenditure
+      //TODO - squib undo?
     }
     else {
       this.spent = newSpent;
@@ -62,8 +62,6 @@ function newBar(budget, total) {
   /* ldBar stored in the element */
   bar.set(c);
   return bar;
-
-  
 }
 
 //functions for opening and closing the new budget interface
@@ -108,9 +106,7 @@ function submit() {
   document.getElementById("insertName").innerHTML = addName.outerHTML;
 
   babar = new PortionBar(document.getElementById("babar"), categories);
-  //these lines refresh portionbar and the Total text
-  babar.setTotal(total);
-  document.getElementById("totalDisp").innerText = `Total Budget: ${totalSpent()} / ${total}`;
+  refreshTotal();
 }
 
 // adds all created budgets to add button
@@ -125,11 +121,12 @@ function addCatToButton() {
 function plusSpent(cat) {
   let inputIncome = document.getElementById(cat).value; //string
   inputIncome = Number.parseFloat(inputIncome); //number
+  //check if the expense exceeds the category allocation
   if(categories[cat].addSpent(inputIncome)) {
-    document.getElementById(`${cat}-spent`).innerText = `$${inputIncome} `;
-    //these lines refresh portionbar and the Total text
-    babar.resizePortions();
-    document.getElementById("totalDisp").innerText = `Total Budget: ${totalSpent()} / ${total}`;
+    let oldSpent = Number(document.getElementById(`${cat}-spent`).innerText.slice(1, document.getElementById(`${cat}-spent`).innerText.length));
+    let newSpent = oldSpent + inputIncome;
+    document.getElementById(`${cat}-spent`).innerText = `$${newSpent} `;
+    refreshTotal();
   }
   else {
     console.log("Blocked overspending");
@@ -151,9 +148,7 @@ function undoSpent(cat) {
   categories[cat].undoSpent(inputIncome);
   let oodles = document.getElementById(`${cat}-spent`).innerText;
   document.getElementById(`${cat}-spent`).innerText = Number(oodles.slice(1, oodles.length)) - inputIncome;
-  //these lines refresh portionbar and the Total text
-  babar.resizePortions();
-  document.getElementById("totalDisp").innerText = `Total Budget: ${totalSpent()} / ${total}`;
+  refreshTotal();
 }
 
 // adds all created budgets to remove button
@@ -173,9 +168,7 @@ function minusCat(cat) {
   delete categories[cat];
   babar.portions[cat].element.remove();
   delete babar.portions[cat];
-  //these lines refresh portionbar and the Total text
-  babar.resizePortions();
-  document.getElementById("totalDisp").innerText = `Total Budget: ${totalSpent()} / ${total}`;
+  refreshTotal();
 }
 
 function totalSpent () {
@@ -184,4 +177,11 @@ function totalSpent () {
     toto += categories[catto].spent;
   }
   return toto;
+}
+
+//function to refresh portionbar and the Total text
+function refreshTotal () {
+  babar.setTotal(total);
+  babar.resizePortions();
+  document.getElementById("totalDisp").innerText = `Total Budget: $ ${totalSpent()} / $ ${total}`;
 }
