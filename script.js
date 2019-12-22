@@ -14,11 +14,12 @@ class Category {
   addSpent(expenditure) {
     let newSpent = this.spent += expenditure;
     if (newSpent > this.allocation) {
-      //squib expenditure
+      return false;
     }
     else {
       this.spent = newSpent;
       this.progressBar.set(newSpent / this.allocation * 100);
+      return true;
     }
   }
 
@@ -122,11 +123,15 @@ function addCatToButton() {
 function plusSpent(cat) {
   let inputIncome = document.getElementById(cat).value; //string
   inputIncome = Number.parseFloat(inputIncome); //number
-  categories[cat].addSpent(inputIncome);
-  document.getElementById(`${cat}-spent`).innerText = `$${inputIncome} `;
-  //these lines refresh portionbar and the Total text
-  babar.resizePortions();
-  document.getElementById("totalDisp").innerText = `Total Budget: ${totalSpent()} / ${total}`;
+  if(categories[cat].addSpent(inputIncome)) {
+    document.getElementById(`${cat}-spent`).innerText = `$${inputIncome} `;
+    //these lines refresh portionbar and the Total text
+    babar.resizePortions();
+    document.getElementById("totalDisp").innerText = `Total Budget: ${totalSpent()} / ${total}`;
+  }
+  else {
+    console.log("Blocked overspending");
+  }
 }
 
 // adds all created budgets to edit button
