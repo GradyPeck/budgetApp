@@ -85,6 +85,7 @@ input{
     border-left: none;
     border-color: green;
     background: transparent;
+    height: 18px;
 }
 
 button{
@@ -203,6 +204,10 @@ h2 {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 12px 16px;
     z-index: 1;
+  }
+/* moves the far right dropdown menu to the left */
+  #addCat3 {
+      right: 0;
   }
   
   .dropdown:hover .dropdown-content {
