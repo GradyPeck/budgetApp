@@ -61,6 +61,8 @@ function newBar(budget, total) {
   /* ldBar stored in the element */
   bar.set(c);
   return bar;
+
+  
 }
 
 //functions for opening and closing the new budget interface
