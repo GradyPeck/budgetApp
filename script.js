@@ -105,7 +105,7 @@ function submit() {
 
   document.getElementById("insertName").innerHTML = addName.outerHTML;
 
-  babar = new PortionBar(document.getElementById("babar"), categories);
+  let babar = new PortionBar(document.getElementById("babar"), categories);
   refreshTotal();
 }
 
