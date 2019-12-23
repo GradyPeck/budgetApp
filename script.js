@@ -179,7 +179,7 @@ function totalSpent () {
   return toto;
 }
 
-//function to refresh portionbar and the Total text
+// function to refresh portionbar and the Total text
 function refreshTotal () {
   babar.setTotal(total);
   babar.resizePortions();
