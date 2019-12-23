@@ -105,7 +105,7 @@ function submit() {
 
   document.getElementById("insertName").innerHTML = addName.outerHTML;
 
-  let babar = new PortionBar(document.getElementById("babar"), categories);
+  babar = new PortionBar(document.getElementById("babar"), categories);
   refreshTotal();
 }
 
@@ -130,6 +130,7 @@ function plusSpent(cat) {
   }
   else {
     console.log("Blocked overspending");
+  
   }
 }
 
@@ -137,11 +138,14 @@ function plusSpent(cat) {
 function addCatToButton2() {
   let catHtml = '';
   for (const cat in categories) {
-    catHtml += `<li class="right"><button id=${cat} onclick="undoSpent('${cat}')">Undo</button>${cat}</li>`;
+    catHtml += `<li class="right">${cat}<button id=${cat} onclick="undoSpent('${cat}')">Undo</button></li>`;
   }
   document.getElementById("addCat2").innerHTML = catHtml;
 }
 
+/**
+ * @todo only will work once after used once on a certain category it will return NaN
+ */
 function undoSpent(cat) {
   let inputIncome = document.getElementById(cat).value; //string
   inputIncome = Number.parseFloat(inputIncome); //number
@@ -155,7 +159,7 @@ function undoSpent(cat) {
 function addCatToButton3() {
   let catHtml = '';
   for (const cat in categories) {
-    catHtml += `<li class="right"><button onclick="minusCat('${cat}')">Remove Budget</button>${cat} </li>`;
+    catHtml += `<li class="right">${cat}<button onclick="minusCat('${cat}')">Remove Budget</button></li>`;
   }
   document.getElementById("addCat3").innerHTML = catHtml;
 }
@@ -179,8 +183,8 @@ function totalSpent () {
   return toto;
 }
 
-// function to refresh portionbar and the Total text
-function refreshTotal () {
+//function to refresh portionbar and the Total text
+function refreshTotal() {
   babar.setTotal(total);
   babar.resizePortions();
   document.getElementById("totalDisp").innerText = `Total Budget: $ ${totalSpent()} / $ ${total}`;
