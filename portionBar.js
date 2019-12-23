@@ -1,6 +1,6 @@
 "use strict";
 
-let colors = ["red", "green", "blue", "orange", "violet", "yellow"];
+let colors = ["red", "green", "blue", "orange", "violet", "yellow", "black", "slateGrey", "Turquoise", "Peru"];
 //let sizes = {Food: 100, Flutes: 600, Coffee: 50, Owls: 150};
 
 class PortionBar {
