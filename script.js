@@ -113,7 +113,7 @@ function submit() {
 function addCatToButton() {
   let catHtml = '';
   for (const cat in categories) {
-    catHtml += `<li class="right">${cat} <input id=${cat} class="right" type="number" placeholder="$0"><button onclick="plusSpent('${cat}')">Add</button></li>`;
+    catHtml += `<li class="right">${cat} <input id=${cat} class="right" type="number"><button onclick="plusSpent('${cat}')">Add</button></li>`;
   }
   document.getElementById("addCat").innerHTML = catHtml;
 }
@@ -130,6 +130,7 @@ function plusSpent(cat) {
   }
   else {
     console.log("Blocked overspending");
+  
   }
 }
 
@@ -142,6 +143,9 @@ function addCatToButton2() {
   document.getElementById("addCat2").innerHTML = catHtml;
 }
 
+/**
+ * @todo only will work once after used once on a certain category it will return NaN
+ */
 function undoSpent(cat) {
   let inputIncome = document.getElementById(cat).value; //string
   inputIncome = Number.parseFloat(inputIncome); //number
