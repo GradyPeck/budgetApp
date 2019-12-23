@@ -130,7 +130,12 @@ function plusSpent(cat) {
     refreshTotal();
   }
   else {
+<<<<<<< HEAD
     alert("You don't have enough budgeted for that!");
+=======
+    console.log("Blocked overspending");
+  
+>>>>>>> ec47d10541dd9cab86ae4db8b91198b13ce71d1c
   }
 }
 
@@ -138,11 +143,14 @@ function plusSpent(cat) {
 function addCatToButton2() {
   let catHtml = '';
   for (const cat in categories) {
-    catHtml += `<li class="right"><button id=${cat} onclick="undoSpent('${cat}')">Undo</button>${cat}</li>`;
+    catHtml += `<li class="right">${cat}<button id=${cat} onclick="undoSpent('${cat}')">Undo</button></li>`;
   }
   document.getElementById("addCat2").innerHTML = catHtml;
 }
 
+/**
+ * @todo only will work once after used once on a certain category it will return NaN
+ */
 function undoSpent(cat) {
   let inputIncome = document.getElementById(cat).value; //string
   inputIncome = Number.parseFloat(inputIncome); //number
@@ -156,7 +164,7 @@ function undoSpent(cat) {
 function addCatToButton3() {
   let catHtml = '';
   for (const cat in categories) {
-    catHtml += `<li class="right"><button onclick="minusCat('${cat}')">Remove Budget</button>${cat} </li>`;
+    catHtml += `<li class="right">${cat}<button onclick="minusCat('${cat}')">Remove Budget</button></li>`;
   }
   document.getElementById("addCat3").innerHTML = catHtml;
 }

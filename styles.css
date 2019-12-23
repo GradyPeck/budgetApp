@@ -10,6 +10,7 @@ body {
 .right {
     display: flex;
     justify-content: space-between;
+    text-align: center;
 }
 
 #form-head {
