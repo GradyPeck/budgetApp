@@ -12,34 +12,30 @@ class Category {
   }
 
   addSpent(expenditure) {
-    let newSpent = this.spent += expenditure;
+    let newSpent = (this.spent += expenditure);
     if (newSpent > this.allocation) {
       return false;
-    }
-    else {
+    } else {
       this.spent = newSpent;
-      this.progressBar.set(newSpent / this.allocation * 100);
+      this.progressBar.set((newSpent / this.allocation) * 100);
       return true;
     }
   }
 
   undoSpent(expenditure) {
-    let newSpent = this.spent -= expenditure;
+    let newSpent = (this.spent -= expenditure);
     if (newSpent < 0) {
       //TODO - squib undo?
-    }
-    else {
+    } else {
       this.spent = newSpent;
-      this.progressBar.set(newSpent / this.allocation * 100);
+      this.progressBar.set((newSpent / this.allocation) * 100);
     }
   }
 }
 
 // creates each tracker bubble
 function newBar(budget, total) {
-
-  let newBudget =
-    `<ul id="${budget}-box" class="budgetBox">
+  let newBudget = `<ul id="${budget}-box" class="budgetBox">
     <li>
       <div class="label-center" id="${budget}"></div>
     </li>
@@ -76,7 +72,7 @@ function closeForm() {
 // takes all information from entered budgets and populates categories{}
 function submit() {
   let cats = document.getElementsByClassName("data-entry");
-  document.getElementById("insertBudget").innerHTML = ''; //Clears array
+  document.getElementById("insertBudget").innerHTML = ""; //Clears array
   for (let arry of cats) {
     if (arry.value) {
       let bar = newBar(arry.name, arry.value);
@@ -111,7 +107,7 @@ function submit() {
 
 // adds all created budgets to add button
 function addCatToButton() {
-  let catHtml = '';
+  let catHtml = "";
   for (const cat in categories) {
     catHtml += `<li class="right">${cat} <input id=${cat} class="right" type="number"><button onclick="plusSpent('${cat}')">Add</button></li>`;
   }
@@ -122,21 +118,26 @@ function plusSpent(cat) {
   let inputIncome = document.getElementById(cat).value; //string
   inputIncome = Number.parseFloat(inputIncome); //number
   //check if the expense exceeds the category allocation
-  if(categories[cat].addSpent(inputIncome)) {
-    let oldSpent = Number(document.getElementById(`${cat}-spent`).innerText.slice(1, document.getElementById(`${cat}-spent`).innerText.length));
+  if (categories[cat].addSpent(inputIncome)) {
+    let oldSpent = Number(
+      document
+        .getElementById(`${cat}-spent`)
+        .innerText.slice(
+          1,
+          document.getElementById(`${cat}-spent`).innerText.length
+        )
+    );
     let newSpent = oldSpent + inputIncome;
     document.getElementById(`${cat}-spent`).innerText = `$${newSpent} `;
     refreshTotal();
-  }
-  else {
-    console.log("Blocked overspending");
-  
+  } else {
+    console.log("Blocked overspending");  
   }
 }
 
 // adds all created budgets to edit button
 function addCatToButton2() {
-  let catHtml = '';
+  let catHtml = "";
   for (const cat in categories) {
     catHtml += `<li class="right">${cat}<button id=${cat} onclick="undoSpent('${cat}')">Undo</button></li>`;
   }
@@ -151,13 +152,14 @@ function undoSpent(cat) {
   inputIncome = Number.parseFloat(inputIncome); //number
   categories[cat].undoSpent(inputIncome);
   let oodles = document.getElementById(`${cat}-spent`).innerText;
-  document.getElementById(`${cat}-spent`).innerText = Number(oodles.slice(1, oodles.length)) - inputIncome;
+  document.getElementById(`${cat}-spent`).innerText =
+    Number(oodles.slice(1, oodles.length)) - inputIncome;
   refreshTotal();
 }
 
 // adds all created budgets to remove button
 function addCatToButton3() {
-  let catHtml = '';
+  let catHtml = "";
   for (const cat in categories) {
     catHtml += `<li class="right">${cat}<button onclick="minusCat('${cat}')">Remove Budget</button></li>`;
   }
@@ -175,9 +177,9 @@ function minusCat(cat) {
   refreshTotal();
 }
 
-function totalSpent () {
+function totalSpent() {
   let toto = 0;
-  for(let catto in categories) {
+  for (let catto in categories) {
     toto += categories[catto].spent;
   }
   return toto;
@@ -188,4 +190,7 @@ function refreshTotal() {
   babar.setTotal(total);
   babar.resizePortions();
   document.getElementById("totalDisp").innerText = `Total Budget: $ ${totalSpent()} / $ ${total}`;
+  if (totalSpent() >= total) {
+    alert("Budget is Full");
+  }
 }
