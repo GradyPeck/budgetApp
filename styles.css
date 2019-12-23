@@ -1,0 +1,380 @@
+.center, p {
+    display: flex;
+    padding: 2px;
+}
+body {
+    background: linear-gradient(110deg, #b5f0dc 60%, #e2fff9 60%);
+    font-family: 'Alata', sans-serif;
+}
+
+.right {
+    display: flex;
+    justify-content: space-between;
+}
+
+#form-head{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 35px;
+       
+}
+
+.form-container {
+    z-index: 5;
+}
+
+.open-button{
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    margin-top: 10px;
+}
+
+.open-button:hover{
+    background-color: darkgreen;
+}
+
+.open-button:active{
+    background-color: lime;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+#myForm{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    padding: 10px;
+    width: 95%;
+    border-style: solid;
+    border-width: 5px;
+    border-color: darkgreen;
+    background: linear-gradient(to bottom, rgb(79, 202, 79), white);
+    
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+}
+
+.inserts {
+    padding: 10px;
+    list-style-type: none;  
+  }
+
+  /* styled enter name and enter total budget to look different than categories */
+.insertsMain {
+    padding: 10px;
+    list-style-type: none;
+    font-size: medium;
+    font-weight: bold;
+  }
+
+
+input{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-color: green;
+    background: transparent;
+    height: 18px;
+}
+
+button{
+    padding: 5px;
+    margin-right: 10px;
+    border-color: darkgreen;
+    background-color: transparent;
+    color: darkgreen;
+    text-emphasis: bold;
+    font-weight: bold;
+    margin: 5px;
+}
+
+#insertName{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.data-entry{
+    margin-bottom: 10px;
+    
+}
+
+body {
+    background-color: #F3FCFF;
+}
+
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+li {
+    list-style-type: none;
+    padding: 5px;
+}
+
+
+.portionBar {
+    height: 15px;
+    width: 300px;
+    margin-bottom: 3px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+}
+
+/* used to center the portionbar and h2 above it*/
+.pBar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-right: 50px;
+}
+
+h1 {
+    margin: 10px;
+    margin-bottom: 35px;
+}
+h2 {
+    padding-bottom: 3px;
+}
+
+.name{
+    text-align: center;
+}
+
+.buttonContent{
+    display: flex;
+    justify-content: space-around;
+}
+
+.button{
+    border-radius: 50%;
+    box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), 
+    inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204,198,197,.5);
+    height: 70px;
+    width: 70px;
+    background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border: none;
+}
+
+.add{
+    font-size: 275%;
+    color: rgb(68, 238, 68);
+    text-shadow: 0px -1px 1px green, 1px 1px 1px white;
+}
+
+.edit{
+    font-size: 200%;
+    color: rgb(120, 120, 243);
+    text-shadow: 0px -1px blue, 1px 1px 1px white;
+}
+
+.remove{
+    font-size: 225%;
+    color: rgb(236, 100, 100);
+    text-shadow: opx -1px 1px rgb(150, 7, 7), 1px 1px 1px white;
+}
+
+.dropdown {
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+/* moves the far right dropdown menu to the left */
+  #addCat3 {
+      right: 0;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* centers the budget circles content */
+  .budgetBox {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: column;
+  }
+  /* centers new budget circles */
+  #insertBudget {
+      margin-right: 45px;
+      padding: 0px;
+  }
+
+@media(min-width: 786px){
+    body{
+        font-family: 'Alfa Slab One', cursive;
+    }
+
+    h1 {
+        background-clip: text;
+        -webkit-background-clip: text;
+  	    -webkit-text-fill-color: transparent;	
+	    background-image: url(http://getwallpapers.com/wallpaper/full/e/a/1/1164287-large-3d-money-wallpapers-2123x1664-for-xiaomi.jpg);
+	    background-size: auto;
+	    background-attachment: unset;
+	    background-position: 0%;
+	    width: 80%;
+	    margin: 10%;
+	    font-size: 120px;
+	    animation: moneyMoving infinite 220s;
+	    animation-fill-mode: forwards;
+	    animation-play-state: running;
+	    animation-timing-function: linear;
+        text-align: center;
+    }
+
+    @keyframes moneyMoving {
+	    0% {
+	    	background-position: 0%;	
+	    }
+	    50% {
+	    	background-position: 100%;	
+	    }
+	    100% {
+	    	background-position: 0%;
+	    }
+    }
+
+
+    .button{
+        border-radius: 0%;
+        width:250px;
+        background-image: none;
+        box-shadow: none;
+        border: none;
+    }
+
+    .add{
+        transition: all .5s;
+    }
+
+    .add-white{
+        background: #fff;
+    }
+
+    .add:hover{
+        box-shadow:0px 10px 10px rgba(0,0,0,0.2);
+        transform : translateY(-3px);
+    }
+
+    .add:active{
+        box-shadow:0px 5px 10px rgba(0,0,0,0.2);
+        transform:translateY(-1px);
+    }
+
+    .add-bottom-animation-1{
+        animation:comeFromBottom 1s ease-out .8s;
+    }
+
+    .add::after{
+        z-index:-1;
+        transition: all .5s;
+    }
+
+    .add-white::after {
+        background: #fff;
+    }
+
+    .add-animation-1:hover::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+    }
+
+    @keyframes comeFromBottom{
+        0%{
+          opacity:0;
+          transform:translateY(40px);
+        } 
+        100%{
+          opacity:1;
+          transform:translateY(0);
+        }
+      }
+
+    .edit{
+        transition: all 0.5s;
+    }
+
+    .edit:hover{
+        color: blue;
+    }
+
+    .remove{
+        transition: all 0.5s;
+        position: relative;
+        box-shadow: none;
+        background-image: none;
+    }
+
+    .remove span{
+        z-index: 2;
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .remove::before{
+        content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.5s;
+    border: 1px solid rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 0);
+    }
+
+    .remove::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 0.5s;
+        border: 1px solid rgba(255, 255, 255, 0);
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+    .remove:hover:before {
+        transform: rotate(-45deg);
+        background-color: rgba(104, 54, 54, 0.219);
+    }
+
+    .remove:hover::after {
+        transform: rotate(45deg);
+        background-color: rgba(104, 54, 54, 0.219);
+    }
+
+}

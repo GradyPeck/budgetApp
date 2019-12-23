@@ -1,34 +1,88 @@
 <!DOCTYPE html>
-
-
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>My Budget</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-        <link rel="stylesheet" href="styles.css">
-    </head>
-
-    <header name="name">My Budget</header>
-    <form id="Create">
-        <input type="text" name="total" id="" placeholder="Enter weekly budget here" />
-        <button>Submit</button>
-    </form>
-
-    <body>
-<<<<<<< HEAD
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Budget</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">    
+    <link rel="stylesheet" type="text/css" href="loading-bar.css"/>
+    <script type="text/javascript" src="loading-bar.js"></script>
+    <script src="https://kit.fontawesome.com/b36805c446.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Alata|Alfa+Slab+One&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <header id="form-head">
+        <button class="open-button" onclick="openForm()" >Create Budget</button>
+        <div class="form-container" id="myForm" style="display:block">
         
+            <div><h1 class="title">My Weekly Budget</h1></div>
+    
+            <ul>
+                <li class="insertsMain" >Enter your name:<input type="text" name="name" id="userName" /></li>
         
-        <script src="script.js" async defer></script>
-=======
-        <header>
-            <h1>Adam West</h1>
-        </header>
-        <script src="./script.js" async defer></script>
+                <li class="insertsMain">Enter Total budget:<input type="number" name="Total" id="total"/></li>
+        
+                <li class="inserts">Leisure Budget Total:<input type="number" name="Leisure" class="data-entry"/></li>
+        
+                <li class="inserts">Food Budget Total:<input type="number" name="Food" class="data-entry"/></li>
+        
+                <li class="inserts">Clothing Budget Total:<input type="number" name="Clothing" class="data-entry"/></li>
+        
+                <li class="inserts">Bills Budget Total:<input type="number" name="Bills" class="data-entry" /></li>
+        
+                <li class="inserts">Savings Budget Total:<input type="number" name="Savings"  class="data-entry"/></li>
+        
+                <li class="inserts">Gas Budget Total:<input type="number" name="Gas" class="data-entry" /></li>
 
->>>>>>> e58eb1df3e6537f7cbe28aa21fbb9be004da7cf2
-    </body>
+                <!-- <li class="inserts">Personal Budget Total:<input type="number" name="Personal" class="data-entry" /></li> -->
+
+                <!-- <li class="inserts">Loans Budget Total:<input type="number" name="Loans" class="data-entry" /></li> -->
+
+            </ul>
+
+            <button class="btn" onclick="submit(); closeForm()">Submit</button>
+            <button class="btn cancel" onclick="closeForm()">Cancel</button>
+        </div>
+    </header>
+    <div id="insertName">
+    <!-- User name will go here -->
+    </div>
+    <div class="buttonContent">
+    
+        <div class="dropdown">
+            <button class="button add" class="dropbtn" onmouseover="addCatToButton()" onclick="addCatToButton()"> <i class="fas fa-plus" id="outline"></i> </button>
+
+            <div class="dropdown-content" id="addCat">
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="button edit" class="dropbtn" onmouseover="addCatToButton2()" onclick="addCatToButton2()"> <i class="fas fa-redo-alt"></i> </button>
+
+            <div class="dropdown-content" id="addCat2">
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="button remove" class="dropbtn" onmouseover="addCatToButton3()" onclick="addCatToButton3()"> <i class="fas fa-trash-alt" ></i> </button>
+
+            <div class="dropdown-content" id="addCat3">
+            </div>
+        </div>
+
+    </div>    
+
+    <ul class="pBar">
+        <h2 id="totalDisp">Total Budget: </h2>
+        <div class="portionBar" id="babar"></div>
+    </ul>
+
+    <ul id="insertBudget">
+    <!-- budget circles will be inserted here when created by user -->
+    </ul>
+
+    <script src="portionBar.js"></script>
+    <script src="./script.js"></script>
+
+</body>
 </html>
