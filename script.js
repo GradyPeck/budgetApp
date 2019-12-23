@@ -130,12 +130,7 @@ function plusSpent(cat) {
     refreshTotal();
   }
   else {
-<<<<<<< HEAD
     alert("You don't have enough budgeted for that!");
-=======
-    console.log("Blocked overspending");
-  
->>>>>>> ec47d10541dd9cab86ae4db8b91198b13ce71d1c
   }
 }
 
