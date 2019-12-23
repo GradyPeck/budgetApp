@@ -12,7 +12,7 @@ class Category {
   }
 
   addSpent(expenditure) {
-    let newSpent = this.spent += expenditure;
+    let newSpent = this.spent + expenditure;
     if (newSpent > this.allocation) {
       return false;
     }
@@ -24,7 +24,7 @@ class Category {
   }
 
   undoSpent(expenditure) {
-    let newSpent = this.spent -= expenditure;
+    let newSpent = this.spent - expenditure;
     if (newSpent < 0) {
       //TODO - squib undo?
     }
@@ -113,7 +113,7 @@ function submit() {
 function addCatToButton() {
   let catHtml = '';
   for (const cat in categories) {
-    catHtml += `<li class="right">${cat} <input id=${cat} class="right" type="number"><button onclick="plusSpent('${cat}')">Add</button></li>`;
+    catHtml += `<li class="right">${cat} <input id=${cat} class="right" type="number" value=0><button onclick="plusSpent('${cat}')">Add</button></li>`;
   }
   document.getElementById("addCat").innerHTML = catHtml;
 }
@@ -123,13 +123,14 @@ function plusSpent(cat) {
   inputIncome = Number.parseFloat(inputIncome); //number
   //check if the expense exceeds the category allocation
   if(categories[cat].addSpent(inputIncome)) {
+    //all this weirdness makes the spent amount add up instead of replacing
     let oldSpent = Number(document.getElementById(`${cat}-spent`).innerText.slice(1, document.getElementById(`${cat}-spent`).innerText.length));
     let newSpent = oldSpent + inputIncome;
     document.getElementById(`${cat}-spent`).innerText = `$${newSpent} `;
     refreshTotal();
   }
   else {
-    console.log("Blocked overspending");
+    alert("You don't have enough budgeted for that!");
   }
 }
 
@@ -171,6 +172,7 @@ function minusCat(cat) {
   refreshTotal();
 }
 
+//totals up the amount spent in all categories
 function totalSpent () {
   let toto = 0;
   for(let catto in categories) {
