@@ -45,7 +45,7 @@ function newBar(budget, total) {
       <div class="label-center" id="${budget}"></div>
     </li>
     <li>
-      <h2>${budget}</h2>
+      <h2 id="${budget}">${budget}</h2>
     </li>
     <li class="center">
       <p id=${budget}-spent>$0</p><p id="${budget}-allocation"> of $${total} Spent</p>

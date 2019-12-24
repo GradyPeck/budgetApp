@@ -1,3 +1,41 @@
+#Leisure {
+    color: red;
+}
+
+#Food {
+    color: green;
+}
+
+#Clothing {
+    color: blue;
+}
+
+#Bills {
+    color: orange;
+}
+
+#Savings {
+    color: violet;
+}
+
+#Gas {
+    color: springgreen;
+}
+
+#Personal {
+    color: black;
+}
+#Loans {
+    color: slateGrey;
+}
+
+#Emergency {
+    color: turquoise;
+}
+
+#Vacation {
+    color: peru;
+}
 .center, p {
     display: flex;
     padding: 2px;
@@ -64,6 +102,7 @@ body {
 .title{
     display: flex;
     justify-content: center;
+    margin-left: 10%;
 }
 
 .inserts {
@@ -76,7 +115,7 @@ body {
     padding: 10px;
     list-style-type: none;
     font-size: medium;
-    font-weight: bold;
+
   }
 
 
@@ -233,6 +272,11 @@ h2 {
         font-family: 'Alfa Slab One', cursive;
     }
 
+    #insertName{
+        display: flex;
+        justify-content: center;
+    }
+
     h1 {
         background-clip: text;
         -webkit-background-clip: text;
@@ -241,8 +285,7 @@ h2 {
 	    background-size: auto;
 	    background-attachment: unset;
 	    background-position: 0%;
-	    width: 80%;
-	    margin: 10%;
+        width: 80%;
 	    font-size: 120px;
 	    animation: moneyMoving infinite 220s;
 	    animation-fill-mode: forwards;
