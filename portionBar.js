@@ -1,6 +1,6 @@
 "use strict";
 
-let colors = ["red", "green", "blue", "orange", "violet", "springGreen", "black", "slateGrey", "Turquoise", "Peru"];
+let colors = {Leisure: "red", Food: "green", Clothing: "blue", Bills: "orange", Savings: "violet", Gas: "springGreen", Personal: "black", Loans: "slateGrey", Emergency: "Turquoise", Vacation: "Peru"};
 //let sizes = {Food: 100, Flutes: 600, Coffee: 50, Owls: 150};
 
 class PortionBar {
@@ -22,7 +22,7 @@ class PortionBar {
             this.portions[portions[i]] = porty;
             this.element.appendChild(portyElement);
             //style inner bars
-            porty.setColor(colors[i]);
+            porty.setColor(colors[portions[i]]);
             portyElement.style["height"] = getComputedStyle(this.element).height;
         }
         this.total = 0;
