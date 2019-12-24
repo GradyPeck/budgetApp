@@ -31,6 +31,11 @@ class Category {
       this.progressBar.set((newSpent / this.allocation) * 100);
     }
   }
+  update(newAllocation, name){
+      this.allocation=Number.parseFloat(newAllocation)
+      this.progressBar.set(this.spent/this.allocation);
+      document.getElementById(name+'-allocation' ).innerHTML = `of $${this.allocation} Spent`;
+  }
 }
 
 // creates each tracker bubble
@@ -43,7 +48,7 @@ function newBar(budget, total) {
       <h2>${budget}</h2>
     </li>
     <li class="center">
-      <p id=${budget}-spent>$0</p><p> of $${total} Spent</p>
+      <p id=${budget}-spent>$0</p><p id="${budget}-allocation"> of $${total} Spent</p>
     </li>
   </ul>`;
   let node = document.createElement("li");
@@ -72,11 +77,13 @@ function closeForm() {
 // takes all information from entered budgets and populates categories{}
 function submit() {
   let cats = document.getElementsByClassName("data-entry");
-  document.getElementById("insertBudget").innerHTML = ""; //Clears array
+
   for (let arry of cats) {
-    if (arry.value) {
+    if (arry.value && !categories[arry.name]) {
       let bar = newBar(arry.name, arry.value);
       categories[arry.name] = new Category(Number(arry.value), bar);
+    }else if(categories[arry.name]){
+        categories[arry.name].update(arry.value,arry.name);
     }
   }
   // inserts users name at top
@@ -100,8 +107,9 @@ function submit() {
   }
 
   document.getElementById("insertName").innerHTML = addName.outerHTML;
-
-  babar = new PortionBar(document.getElementById("babar"), categories);
+  if(!babar){
+    babar = new PortionBar(document.getElementById("babar"), categories);
+  }
   refreshTotal();
 }
 
