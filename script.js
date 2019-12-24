@@ -151,7 +151,7 @@ function undoSpent(cat) {
   inputIncome = Number.parseFloat(inputIncome); //number
   categories[cat].undoSpent(inputIncome);
   let oodles = document.getElementById(`${cat}-spent`).innerText;
-  document.getElementById(`${cat}-spent`).innerText = Number(oodles.slice(1, oodles.length)) - inputIncome;
+  document.getElementById(`${cat}-spent`).innerText = "$" + Number(oodles.slice(1, oodles.length)) - inputIncome;
   refreshTotal();
 }
 

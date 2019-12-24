@@ -7,6 +7,7 @@ class PortionBar {
     constructor (element, categories) {
         //connect this object to its HTML element
         this.element = element;
+        element.innerHTML = ''; //Clears category bars
         //set up empty portions object
         this.portions = {};
         //set up array of category names
