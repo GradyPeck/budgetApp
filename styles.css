@@ -1,3 +1,41 @@
+#Leisure {
+    color: red;
+}
+
+#Food {
+    color: green;
+}
+
+#Clothing {
+    color: blue;
+}
+
+#Bills {
+    color: orange;
+}
+
+#Savings {
+    color: violet;
+}
+
+#Gas {
+    color: springgreen;
+}
+
+#Personal {
+    color: black;
+}
+#Loans {
+    color: slateGrey;
+}
+
+#Emergency {
+    color: turquoise;
+}
+
+#Vacation {
+    color: peru;
+}
 .center, p {
     display: flex;
     padding: 2px;
@@ -77,6 +115,7 @@ body {
     padding: 10px;
     list-style-type: none;
     font-size: medium;
+
   }
 
 
