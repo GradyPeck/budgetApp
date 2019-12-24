@@ -236,7 +236,6 @@ h2 {
 	    background-attachment: unset;
 	    background-position: 0%;
 	    width: 80%;
-	    margin: 10%;
 	    font-size: 120px;
 	    animation: moneyMoving infinite 220s;
 	    animation-fill-mode: forwards;
