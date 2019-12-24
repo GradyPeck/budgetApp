@@ -1,6 +1,6 @@
 "use strict";
 
-let colors = ["red", "green", "blue", "orange", "violet", "yellow"];
+let colors = ["red", "green", "blue", "orange", "violet", "yellow", "black", "slateGrey", "Turquoise", "Peru"];
 //let sizes = {Food: 100, Flutes: 600, Coffee: 50, Owls: 150};
 
 class PortionBar {
@@ -38,10 +38,7 @@ class PortionBar {
         let myWidth = getComputedStyle(this.element).width;
         myWidth = Number(myWidth.slice(0, myWidth.length - 2));
         let sizeFactor = myWidth/this.total;
-        console.log(sizeFactor);
         for(let porty in this.portions) {
-            console.log(categories[porty].spent);
-            console.log(categories[porty].spent*sizeFactor);
             this.portions[porty].element.style["width"] = categories[porty].spent*sizeFactor + "px";
         }
     }
@@ -58,6 +55,6 @@ class Portion {
     }
 }
 
-//let babar = new PortionBar(document.getElementById("babar"), "Food", "Owls", "Coffee");
-//babar.setTotal(500);
-//babar.resizePortions();
+// let babar = new PortionBar(document.getElementById("babar"), "Food", "Owls", "Coffee");
+// babar.setTotal(500);
+// babar.resizePortions();
