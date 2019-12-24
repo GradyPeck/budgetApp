@@ -15,10 +15,9 @@ class Category {
     let newSpent = this.spent + expenditure;
     if (newSpent > this.allocation) {
       return false;
-    }
-    else {
+    } else {
       this.spent = newSpent;
-      this.progressBar.set(newSpent / this.allocation * 100);
+      this.progressBar.set((newSpent / this.allocation) * 100);
       return true;
     }
   }
@@ -27,19 +26,16 @@ class Category {
     let newSpent = this.spent - expenditure;
     if (newSpent < 0) {
       //TODO - squib undo?
-    }
-    else {
+    } else {
       this.spent = newSpent;
-      this.progressBar.set(newSpent / this.allocation * 100);
+      this.progressBar.set((newSpent / this.allocation) * 100);
     }
   }
 }
 
 // creates each tracker bubble
 function newBar(budget, total) {
-
-  let newBudget =
-    `<ul id="${budget}-box" class="budgetBox">
+  let newBudget = `<ul id="${budget}-box" class="budgetBox">
     <li>
       <div class="label-center" id="${budget}"></div>
     </li>
@@ -76,7 +72,7 @@ function closeForm() {
 // takes all information from entered budgets and populates categories{}
 function submit() {
   let cats = document.getElementsByClassName("data-entry");
-  document.getElementById("insertBudget").innerHTML = ''; //Clears array
+  document.getElementById("insertBudget").innerHTML = ""; //Clears array
   for (let arry of cats) {
     if (arry.value) {
       let bar = newBar(arry.name, arry.value);
@@ -111,7 +107,7 @@ function submit() {
 
 // adds all created budgets to add button
 function addCatToButton() {
-  let catHtml = '';
+  let catHtml = "";
   for (const cat in categories) {
     catHtml += `<li class="right">${cat} <input id=${cat} class="right" type="number" value=0><button onclick="plusSpent('${cat}')">Add</button></li>`;
   }
@@ -136,7 +132,7 @@ function plusSpent(cat) {
 
 // adds all created budgets to edit button
 function addCatToButton2() {
-  let catHtml = '';
+  let catHtml = "";
   for (const cat in categories) {
     catHtml += `<li class="right">${cat}<button id=${cat} onclick="undoSpent('${cat}')">Undo</button></li>`;
   }
@@ -157,7 +153,7 @@ function undoSpent(cat) {
 
 // adds all created budgets to remove button
 function addCatToButton3() {
-  let catHtml = '';
+  let catHtml = "";
   for (const cat in categories) {
     catHtml += `<li class="right">${cat}<button onclick="minusCat('${cat}')">Remove Budget</button></li>`;
   }
@@ -178,14 +174,14 @@ function minusCat(cat) {
 //totals up the amount spent in all categories
 function totalSpent () {
   let toto = 0;
-  for(let catto in categories) {
+  for (let catto in categories) {
     toto += categories[catto].spent;
   }
   return toto;
 }
 
 //function to refresh portionbar and the Total text
-function refreshTotal () {
+function refreshTotal() {
   babar.setTotal(total);
   babar.resizePortions();
   document.getElementById("totalDisp").innerText = `Total Budget: $ ${totalSpent()} / $ ${total}`;
